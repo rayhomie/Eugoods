@@ -1,0 +1,5 @@
+<!--miniprogram/pages/home/search/search.wxml-->
+<view class="search">
+<input placeholder="请输入搜索关键词"></input>
+<button size="mini">取消</button>
+</view>

@@ -1,0 +1,4 @@
+/* miniprogram/pages/home/search/search.wxss */
+.search{
+  display: flex;
+}

@@ -1,0 +1,8 @@
+/* miniprogram/pages/profile/profile.wxss */
+.myOrder{
+  display: flex;
+}
+.myOrder1{
+  width: 25%;
+  height: 200rpx;
+}

@@ -1,0 +1,14 @@
+<!--miniprogram/pages/profile/profile.wxml-->
+<view class="myInfo">
+<navigator url="../profile/myInfo/myInfo">个人信息</navigator>
+</view>
+<view  class="myOrder">
+<navigator class="myOrder1" url="../profile/issue/issue">我发布的</navigator>
+<navigator class="myOrder1" url="../profile/sale/sale">我卖出的</navigator>
+<navigator class="myOrder1" url="../profile/bought/bought">我买到的</navigator>
+<navigator class="myOrder1" url="../profile/wanna/wanna">我想要的</navigator>
+</view>
+
+<view class="customerService">
+<navigator url="../profile/customerService/customerService">客服中心</navigator>
+</view>

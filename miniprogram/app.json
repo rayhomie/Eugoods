@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/profile/profile",
+    "pages/communication/communication",
+    "pages/profile/myInfo/myInfo",
+    "pages/profile/customerService/customerService",
+    "pages/profile/issue/issue",
+    "pages/profile/sale/sale",
+    "pages/profile/bought/bought",
+    "pages/profile/wanna/wanna",
+    "pages/home/search/search",
+    "pages/publish/publish"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "西柚二手平台",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#e64340",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "./assets/img/tabbar/home.png",
+        "selectedIconPath": "./assets/img/tabbar/home1.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布",
+        "iconPath": "./assets/img/tabbar/addto.png",
+        "selectedIconPath": "./assets/img/tabbar/addto1.png"
+      },
+      {
+        "pagePath": "pages/communication/communication",
+        "text": "消息",
+        "iconPath": "./assets/img/tabbar/group ctrl.png",
+        "selectedIconPath": "./assets/img/tabbar/group ctrl1.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "./assets/img/tabbar/nickname.png",
+        "selectedIconPath": "./assets/img/tabbar/nickname1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

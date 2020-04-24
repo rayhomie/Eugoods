@@ -1,0 +1,17 @@
+<!--miniprogram/pages/home/home.wxml-->
+<view>
+<navigator url="../home/search/search">请输入搜索关键词</navigator>
+</view>
+
+<view class="classify">
+<button>分类1</button>
+<button>分类2</button>
+<button>分类3</button>
+</view>
+
+<view class="displaySelect">
+<button>最近发布</button>
+<button>可能喜欢</button>
+</view>
+
+<view class="goodsDisplay"></view>
