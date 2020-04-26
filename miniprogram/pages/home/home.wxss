@@ -5,3 +5,6 @@
 .classify{
   display: flex;
 }
+swiper-cpn{
+  height: 300rpx;
+}

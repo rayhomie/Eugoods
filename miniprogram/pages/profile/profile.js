@@ -1,13 +1,14 @@
 // miniprogram/pages/profile/profile.js
 Page({
     getUserInfo:function(e){
-      // console.log(e.detail)
-      App.globalData=e.detail.userInfo
-      console.log(App.globalData)
+       //console.log(e.detail)
+     
+      //console.log(App.globalData)
       this.setData({
         userInfo:e.detail.userInfo,
         hasUserInfo:true
       })
+      //console.log(this.data.userInfo)
       if(e.detail.userInfo.gender===1){
         this.setData({
           gender:"男"
@@ -21,7 +22,26 @@ Page({
           area:e.detail.userInfo.city,
           showSelectBtn:true//先登录在显示
         })
-        
+        this.getOpenid()
+         //console.log(this.data.userInfo)
+         App.globalData=this.data.userInfo
+        console.log(App.globalData)
+    },
+    //云调用getOpenid
+    getOpenid(){
+      var page = this;
+      wx.cloud.callFunction({
+        name:'getOpenid',
+        complete:res=>{
+          //console.log('openid--',res.result)
+          var openid = res.result.openid
+          //将openid交给userinfo
+          this.data.userInfo.openid=res.result.openid
+          page.setData({
+            openid:openid,
+          })
+        }
+      })
     },
  
   //选择学校的按钮和组件显示
@@ -44,7 +64,7 @@ Page({
       })
       App.globalData=this.data.userInfo
       console.log(App.globalData)
-     // console.log(this.data.userInfo)
+     //console.log(this.data.userInfo)
     //console.log(this.data.school)
   },
    /**
@@ -57,13 +77,15 @@ Page({
     area:'',
     showSelectBtn:false,
     showSelectSchool:false,
-    school:''
+    school:'',
+    openid:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+ 
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
@@ -71,8 +93,9 @@ Page({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData = res.userInfo
-
+              App.globalData = res.userInfo
+              console.log(App.globalData)
+              //console.log(res)
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {

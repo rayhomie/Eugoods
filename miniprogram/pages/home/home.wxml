@@ -2,6 +2,7 @@
 <view>
 <navigator url="../home/search/search">请输入搜索关键词</navigator>
 </view>
+<swiper-cpn></swiper-cpn>
 <tab-control titles="{{['流行','新款','精选']}}"
 bind:itemClick="tabControlClick" />
 

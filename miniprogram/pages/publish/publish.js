@@ -28,14 +28,21 @@ Page({
     this.setData({
       resource:res
     })
-  },//上传图片处理
+
+  },
+  //发布处理
   handlePublish() {
+    //图片上传
+    const imagePath=[]
     for (var i = 0; i < this.data.resource.length; i++) {
       wx.cloud.uploadFile({
-        cloudPath: i + ".png",
+        cloudPath: App.globalData.openid+"_"+good_name+"_"+i+ ".png",
         filePath: this.data.resource[i]
-      })}
-
+      })
+      const imageNext='cloud://rayhomie.7261-rayhomie-1301936252/'+App.globalData.openid+"_"+good_name+"_"+i+ ".png"
+      imagePath.push(imageNext)
+    }
+      
       const db=wx.cloud.database()
       const goodsCollection=db.collection("goods")
       const good_name =this.data.publishInfo.otherSub.good_name
@@ -53,7 +60,9 @@ Page({
           good_describe:good_describe,
           good_category:good_category,
           good_state:false,
-          publisher_info:this.data.userinfo
+          good_image:imagePath,
+          good_publisher_school:this.data.userinfo.school
+          //publisher_info:this.data.userinfo,
         }
       }).then(res=>{
         console.log(res)
@@ -65,7 +74,9 @@ Page({
         icon:'loading'
       })
     }
+
     
+      
   },
   //分类选择
   checkboxChange(event){
@@ -92,7 +103,8 @@ Page({
       {name:"book",value:"书籍",checked:""},
       {name:"digital",value:"数码",checked:""},
       {name:"clothes",value:"服装",checked:""},
-      {name:"ornaments",value:"饰品",checked:""}
+      {name:"ornaments",value:"饰品",checked:""},
+      {name:"ohter",value:"其他",checked:""}
     ],
     publishInfo:{},
     userinfo:{}

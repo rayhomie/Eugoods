@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "tab-control":"../../components/home/tab-control/tab-control"
+    "tab-control":"../../components/home/tab-control/tab-control",
+    "swiper-cpn":"../../components/home/swiperCpn/swiper-cpn"
   }
 }
