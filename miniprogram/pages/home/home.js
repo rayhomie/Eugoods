@@ -1,11 +1,13 @@
 // miniprogram/pages/home/home.js
 Page({
-
+  tabControlClick(event){
+    //console.log(event)
+  },
   /**
    * 页面的初始数据
    */
   data: {
-
+    
   },
 
   /**

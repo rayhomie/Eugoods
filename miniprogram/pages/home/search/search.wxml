@@ -1,5 +1,8 @@
 <!--miniprogram/pages/home/search/search.wxml-->
 <view class="search">
-<input placeholder="请输入搜索关键词"></input>
+<form bindsubmit="handleSubmit">
+<input placeholder="请输入搜索关键词" name="keyword"></input>
 <button size="mini">取消</button>
+<button form-type="submit">搜索</button>
+</form>
 </view>

@@ -1,23 +1,41 @@
 <!--miniprogram/pages/publish/publish.wxml-->
+<form bindsubmit="handleSubmit">
 <view>
 <text>商品名称</text>
-<input></input>
+<input name="good_name" placeholder="please input name"></input>
 </view>
 <view>
 <text>分类</text>
-<input></input>
+<checkbox-group bindchange="checkboxChange">
+  <label class="checkbox" wx:for="{{category}}" wx:key="key">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+  </label>
+</checkbox-group>
 </view>
 <view>
 <text>价格</text>
-<input></input>
+<input name="good_price" placeholder="please input price"></input>
 </view>
 <view>
 <text>联系方式</text>
-<input></input>
+<input name="good_phone" placeholder="please input phone number"></input>
 </view>
 <view>
 <text>详细描述</text>
-<input></input>
+<input name="good_describe" placeholder="give your goods some description"></input>
 </view>
-<button>上传图片</button>
-<button>发布</button>
+
+<view>上传图片（不超过8张）</view>
+
+<view>
+<view class="picture">
+<view class="pic" wx:for="{{resource}}" wx:key="key">
+<image class="pic1" src="{{item}}" mode="aspectFill"/>
+<image class="cancel" src="../../assets/img/addPicBtn/cancel.png" bindtap="cancel"/>
+</view>
+<image bindtap="handleUpload" src="../../assets/img/addPicBtn/timg.jpg"></image>
+</view>
+
+<button bindtap="handlePublish" form-type="submit">发布</button>
+</view>
+</form>

@@ -1,0 +1,9 @@
+<!--components/my-info/my-info.wxml-->
+
+<picker-view value="[20]" bindchange="bindChange" indicator-style="height: 0rpx;" style="width: 600rpx; height: 100rpx;text-align:center;">
+ <text>学校：</text> 
+<picker-view-column>
+    <view wx:for="{{university}}" wx:key="index" style="line-height: 55rpx;text-align:center;">{{item}}</view>
+</picker-view-column>
+</picker-view>
+<button size="mini" bindtap="decide">确定</button>

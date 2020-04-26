@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "my-info":"../../components/profile/my-info/my-info"
+  },
   "navigationBarTitleText":"我的"
 }

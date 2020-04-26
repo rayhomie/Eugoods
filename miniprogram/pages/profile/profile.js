@@ -1,18 +1,88 @@
 // miniprogram/pages/profile/profile.js
 Page({
-
-  /**
+    getUserInfo:function(e){
+      // console.log(e.detail)
+      App.globalData=e.detail.userInfo
+      console.log(App.globalData)
+      this.setData({
+        userInfo:e.detail.userInfo,
+        hasUserInfo:true
+      })
+      if(e.detail.userInfo.gender===1){
+        this.setData({
+          gender:"男"
+        })
+      }else{
+        this.setData({
+          gender:"女"
+        })
+      }
+        this.setData({
+          area:e.detail.userInfo.city,
+          showSelectBtn:true//先登录在显示
+        })
+        
+    },
+ 
+  //选择学校的按钮和组件显示
+  selectSchool(){
+    this.setData({
+      showSelectBtn:false,
+      showSelectSchool:true
+    })
+  },
+  decide(e){
+    //console.log(e.detail)
+    this.setData({
+      school:e.detail.school,
+      showSelectSchool:e.detail.showSelectSchool
+    })
+    //将学校信息导入userinfo
+      this.data.userInfo.school=this.data.school
+      this.setData({
+        userInfo:this.data.userInfo
+      })
+      App.globalData=this.data.userInfo
+      console.log(App.globalData)
+     // console.log(this.data.userInfo)
+    //console.log(this.data.school)
+  },
+   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo:{},
+    hasUserInfo:false,
+    gender:'',
+    area:'',
+    showSelectBtn:false,
+    showSelectSchool:false,
+    school:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              // 可以将 res 发送给后台解码出 unionId
+              this.globalData = res.userInfo
 
+              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+              // 所以此处加入 callback 以防止这种情况
+              if (this.userInfoReadyCallback) {
+                this.userInfoReadyCallback(res)
+              }
+            }
+          })
+        }
+      }
+    })
   },
 
   /**
@@ -26,7 +96,37 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // wx.getSetting({
+    //   success(res){
+    //     if(!res.authSetting['scope.userInfo']){
+    //       wx.authorize({
+    //         scope: 'scope.userInfo',
+    //         success(){
+    //           wx.getUserInfo({
+    //             complete: (res) => {console.log(res)},
+    //           })
+    //         },
+    //         fail(){
+    //           wx.openSetting({
+    //             success(){
+    //               wx.getUserInfo({
+    //                 complete: (res) => {console.log(res)},
+    //               })
+    //             },
+    //             fail(){
+    //               //没有获取到授权
+    //               console.log("没有得到授权")
+    //             }
+    //           })
+    //         }
+    //       })
+    //     }else{
+    //       wx.getUserInfo({
+    //         complete: (res) => {console.log(res)},
+    //       })
+    //     }
+    //   }
+    // })
   },
 
   /**

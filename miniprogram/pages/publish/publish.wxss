@@ -1,1 +1,26 @@
 /* miniprogram/pages/publish/publish.wxss */
+.picture{
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+}
+image{
+  border-radius: 10rpx;
+  margin: 15rpx;
+  width: 220rpx;
+  height: 220rpx;
+}
+.pic{
+  padding: 0;
+  position: relative;
+}
+.pic1{
+  padding: 0;
+}
+.cancel{
+  position: absolute;
+  right: -27rpx;
+  top:-27rpx;
+  width: 40rpx;
+  height: 40rpx;
+}

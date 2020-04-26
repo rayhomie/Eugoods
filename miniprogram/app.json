@@ -3,7 +3,6 @@
     "pages/home/home",
     "pages/profile/profile",
     "pages/communication/communication",
-    "pages/profile/myInfo/myInfo",
     "pages/profile/customerService/customerService",
     "pages/profile/issue/issue",
     "pages/profile/sale/sale",

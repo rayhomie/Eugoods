@@ -6,3 +6,21 @@
   width: 25%;
   height: 200rpx;
 }
+.userinfo-nickname{
+  position: relative;
+}
+.userinfo-gender{
+  position: absolute;
+  left: 145rpx;
+}
+.userinfo-area{
+  position: absolute;
+  left: 200rpx;
+}
+.school{
+  font-size: 32rpx;
+  color: #007aff;
+  background-color: white;
+  background-size: cover;
+  text-align: center;
+}
