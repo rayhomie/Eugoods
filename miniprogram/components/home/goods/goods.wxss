@@ -1,0 +1,21 @@
+/* components/home/goods/goods.wxss */
+.goods{
+  background-color: rgb(255,255,255);
+  border-radius: 20rpx;
+  /* border:2rpx solid red; */
+  display: flex;
+  flex-direction: column;
+  margin: 5rpx;
+  box-sizing: border-box;
+  padding: 0rpx;
+}
+
+.goods-name{
+
+}
+.goods-image{
+
+}
+.goods-price{
+
+}

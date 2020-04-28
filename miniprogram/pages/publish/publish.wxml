@@ -6,20 +6,20 @@
 </view>
 <view>
 <text>分类</text>
-<checkbox-group bindchange="checkboxChange">
-  <label class="checkbox" wx:for="{{category}}" wx:key="key">
-    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
-  </label>
-</checkbox-group>
+<radio-group bindchange="checkboxChange">
+     <radio class="radio" wx:for-items="{{category}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+     <text>{{item.value}}</text>
+     </radio>
+</radio-group>
 </view>
 <view>
 <text>价格</text>
 <input name="good_price" placeholder="please input price"></input>
 </view>
-<view>
+<!-- <view>
 <text>联系方式</text>
 <input name="good_phone" placeholder="please input phone number"></input>
-</view>
+</view> -->
 <view>
 <text>详细描述</text>
 <input name="good_describe" placeholder="give your goods some description"></input>

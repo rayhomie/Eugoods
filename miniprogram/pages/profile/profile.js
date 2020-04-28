@@ -1,9 +1,15 @@
 // miniprogram/pages/profile/profile.js
 Page({
+  serveltUpdateInfoPage(){
+    wx.navigateTo({
+      url:'../profile/updateSchoolName/updateSchoolName'
+    })
+  },
     getUserInfo:function(e){
-       //console.log(e.detail)
-     
+      //console.log(this.data.userInfo)
       //console.log(App.globalData)
+      //console.log(e)
+      if(e.detail.errMsg=="getUserInfo:ok"){
       this.setData({
         userInfo:e.detail.userInfo,
         hasUserInfo:true
@@ -26,6 +32,36 @@ Page({
          //console.log(this.data.userInfo)
          App.globalData=this.data.userInfo
         console.log(App.globalData)
+      
+         //第一次登陆调用云函数上传个人信息，需要异步传输，上一步网络请求有延迟
+         setTimeout(()=>{
+          const db=wx.cloud.database()
+          const goodsCollection=db.collection("person")
+          goodsCollection.where({
+          _openid:App.globalData.openid}).get().then(res=>{
+            //console.log(res.data)
+            this.setData({
+              isFirstLogin:res.data
+            })
+            //console.log(this.data.isFirstLogin.length)
+          })
+          if(this.data.isFirstLogin.length==0){//用户重复登录
+            wx.cloud.callFunction({       
+            name: 'firstPushPersonInfo',
+            data: {
+              openid: this.data.userInfo.openid,
+              nickName: this.data.userInfo.nickName,
+              gender: this.data.userInfo.gender,
+              city: this.data.userInfo.city
+            }
+          }).then(res=>{
+            console.log(res)
+          })
+        }
+          //console.log(this.data.userInfo.openid)
+         },2000)
+         
+      }
     },
     //云调用getOpenid
     getOpenid(){
@@ -60,13 +96,17 @@ Page({
     //将学校信息导入userinfo
       this.data.userInfo.school=this.data.school
       this.setData({
-        userInfo:this.data.userInfo
+        userInfo:this.data.userInfo,
+        isshowUpdateSchool:true
       })
       App.globalData=this.data.userInfo
-      console.log(App.globalData)
+      //console.log(App.globalData)
      //console.log(this.data.userInfo)
     //console.log(this.data.school)
+   
   },
+
+ 
    /**
    * 页面的初始数据
    */
@@ -78,7 +118,9 @@ Page({
     showSelectBtn:false,
     showSelectSchool:false,
     school:'',
-    openid:{}
+    openid:{},
+    isshowUpdateSchool:false,
+    isFirstLogin:[]//唯一插入用户信息
   },
 
   /**
@@ -95,17 +137,55 @@ Page({
               // 可以将 res 发送给后台解码出 unionId
               App.globalData = res.userInfo
               console.log(App.globalData)
+            //  console.log(this.data.userInfo)
               //console.log(res)
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
+              this.setData({
+                hasUserInfo:true,
+                userInfo:App.globalData
+              })
+              if(this.data.userInfo.gender===1){
+                this.setData({
+                  gender:"男"
+                })
+              }else{
+                this.setData({
+                  gender:"女"
+                })
+              }
+                this.setData({
+                  area:this.data.userInfo.city
+                })
+
+                this.getOpenid()
+         //console.log(this.data.userInfo)
+         App.globalData=this.data.userInfo
+                setTimeout(()=>{
+                  wx.showToast({
+                    title:'重新登录成功',
+                    icon:'success',
+                    mask:'true'
+                  })
+                  this.setData({
+                    isshowUpdateSchool:true
+                  })
+                })
+
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res)
               }
             }
           })
+        }else{
+          // this.showSettingToast("请授权")
         }
       }
     })
+
+
+
+    
   },
 
   /**
@@ -119,6 +199,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+   // console.log(this.data.school)
     // wx.getSetting({
     //   success(res){
     //     if(!res.authSetting['scope.userInfo']){

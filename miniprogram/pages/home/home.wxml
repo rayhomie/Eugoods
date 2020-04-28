@@ -6,10 +6,42 @@
 <tab-control titles="{{['流行','新款','精选']}}"
 bind:itemClick="tabControlClick" />
 
-
+<!-- 
 <view class="displaySelect">
 <button>最近发布</button>
 <button>可能喜欢</button>
+</view> -->
+
+<view class="displayAll">
+
+<view class="goodsDisplayLeft">
+<block wx:for="{{displayLeft}}" wx:key="index">
+<goods class="goods-item">
+<image class="img" slot="goods-image" src="{{item.goods_image[0]}}" lazy-load mode="widthFix"/>
+<view slot="goods-name">{{item.goods_name}}</view>
+<view slot="goods-price" class="goods-price">￥{{item.goods_price}}
+<image src="../../assets/img/star/collection.png"  class="star" bindtap="zan1" 
+data-goodId="{{item._id}}"  lazy-load="{{true}}" hidden='{{item.show}}' data-index="{{index}}"></image>
+ <image src="../../assets/img/star/collection1.png"  class='star' bindtap="zan1" 
+ data-goodId="{{item._id}}" lazy-load="{{true}}" hidden='{{!item.show}}' data-index="{{index}}"></image>
+</view>
+</goods>
+</block>
+</view>
+<view class="goodsDisplayRight">
+<block wx:for="{{displayRight}}" wx:key="index">
+<goods class="goods-item">
+<image class="img" slot="goods-image" src="{{item.goods_image[0]}}" lazy-load mode="widthFix"/>
+<view slot="goods-name">{{item.goods_name}}</view>
+<view slot="goods-price" class="goods-price">￥{{item.goods_price}}
+<image src="../../assets/img/star/collection.png" class='star' bindtap="zan" 
+data-goodId="{{item._id}}" lazy-load="{{true}}" hidden='{{item.show}}' data-index="{{index}}"></image>
+ <image src="../../assets/img/star/collection1.png"  class='star' bindtap="zan" 
+ data-goodId="{{item._id}}" lazy-load="{{true}}"
+ data-index="{{index}}" hidden='{{!item.show}}'></image>
+ </view>
+</goods>
+</block>
 </view>
 
-<view class="goodsDisplay"></view>
+</view>

@@ -1,4 +1,7 @@
 /* miniprogram/pages/home/home.wxss */
+body{
+  background-color: rgb(246,246, 250);
+}
 .displaySelect{
   display: flex;
 }
@@ -7,4 +10,39 @@
 }
 swiper-cpn{
   height: 300rpx;
+}
+
+
+.goodsDisplayLeft{
+  display: flex;
+  flex-direction:column;
+  align-items:flex-start;
+  width: 375rpx;
+  float: left;
+}
+.goods-item{
+   
+}
+
+.img{
+  width: 364rpx;
+  border-top-left-radius:20rpx;
+  border-top-right-radius:20rpx;
+}
+  
+.goodsDisplayRight{
+  display: flex;
+  flex-direction:column;
+  align-items:flex-start;
+  width: 50%;
+}
+.star{
+  position: absolute;
+  right: 20rpx;
+  bottom: 5rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.goods-price{
+  position: relative;
 }

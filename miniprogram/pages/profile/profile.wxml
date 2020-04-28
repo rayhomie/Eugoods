@@ -1,6 +1,6 @@
 <!--miniprogram/pages/profile/profile.wxml-->
 <view class="myInfo">
-<view class="userinfo">
+<view class="userinfo" >
  <button wx:if="{{!hasUserInfo}}" open-type="getUserInfo"
  bindgetuserinfo="getUserInfo">使用微信授权登录</button>
  <image bindtap="bindViewTap" class="userinfo-avatar" 
@@ -9,12 +9,16 @@
  <text class="userinfo-nick">{{userInfo.nickName}}</text>
  <text class="userinfo-gender">{{gender}}</text>
  <text class="userinfo-area">{{area}}</text>
- </view>
 </view>
+</view>
+<button wx:if="{{isshowUpdateSchool}}" bindtap="serveltUpdateInfoPage">修改学校信息</button>
 </view>
 
+
+
+
 <button class="school" bindtap="selectSchool" wx:if="{{showSelectBtn}}">点击选择高校</button>
-<view>{{school}}</view>
+
 <my-info bind:decide="decide" wx:if="{{showSelectSchool}}"></my-info>
 
 <view  class="myOrder">

@@ -1,6 +1,8 @@
 {
   "usingComponents": {
     "tab-control":"../../components/home/tab-control/tab-control",
-    "swiper-cpn":"../../components/home/swiperCpn/swiper-cpn"
-  }
+    "swiper-cpn":"../../components/home/swiperCpn/swiper-cpn",
+    "goods":"../../components/home/goods/goods"
+  },
+  "enablePullDownRefresh":true
 }

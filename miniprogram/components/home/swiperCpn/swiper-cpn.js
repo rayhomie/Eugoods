@@ -14,15 +14,15 @@ Component({
     list:[
       {
         title:"pic1",
-        imagePath:"../../../assets/img/swiper-pic/1.jpg"
+        imagePath:"../../../assets/img/swiper-pic/1.png"
       },
       {
         title:"pic2",
-        imagePath:"../../../assets/img/swiper-pic/2.jpg"
+        imagePath:"../../../assets/img/swiper-pic/2.png"
       },
       {
         title:"pic3",
-        imagePath:"../../../assets/img/swiper-pic/3.jpg"
+        imagePath:"../../../assets/img/swiper-pic/3.png"
       }
     ]
   },

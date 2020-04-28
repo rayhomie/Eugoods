@@ -1,9 +1,9 @@
 <!--components/home/swiperCpn/swiper-cpn.wxml-->
 <swiper class="swiper"
         circular
-        autoplay
+        autoplay="{{false}}"
         interval='3000'
-        duration='500'
+        duration='1000'
         indicator-dots
         >
 <block wx:for="{{list}}" wx:key="index">

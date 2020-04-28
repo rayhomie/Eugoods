@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "my-info":"../../../components/profile/my-info/my-info"
+  }
+}

@@ -9,7 +9,8 @@
     "pages/profile/bought/bought",
     "pages/profile/wanna/wanna",
     "pages/home/search/search",
-    "pages/publish/publish"
+    "pages/publish/publish",
+    "pages/profile/updateSchoolName/updateSchoolName"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
