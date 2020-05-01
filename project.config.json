@@ -83,6 +83,41 @@
 					"id": -1,
 					"name": "pages/profile/profile",
 					"pathName": "pages/profile/profile",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/profile/issue/issue",
+					"pathName": "pages/profile/issue/issue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/profile/wanna/wanna",
+					"pathName": "pages/profile/wanna/wanna",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/profile/wanna/wanna",
+					"pathName": "pages/profile/wanna/wanna",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/profile/issue/issue",
+					"pathName": "pages/profile/issue/issue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/detailsPage/detailsPage",
+					"pathName": "pages/home/detailsPage/detailsPage",
 					"scene": null
 				}
 			]

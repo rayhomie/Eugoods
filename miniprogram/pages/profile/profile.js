@@ -31,8 +31,8 @@ Page({
         this.getOpenid()
          //console.log(this.data.userInfo)
          App.globalData=this.data.userInfo
+        App.globalData.school_name='西南石油大学'
         console.log(App.globalData)
-      
          //第一次登陆调用云函数上传个人信息，需要异步传输，上一步网络请求有延迟
          setTimeout(()=>{
           const db=wx.cloud.database()
@@ -43,22 +43,28 @@ Page({
             this.setData({
               isFirstLogin:res.data
             })
+            //console.log(this.data.userInfo)
             //console.log(this.data.isFirstLogin.length)
           })
-          if(this.data.isFirstLogin.length==0){//用户重复登录
-            wx.cloud.callFunction({       
-            name: 'firstPushPersonInfo',
-            data: {
-              openid: this.data.userInfo.openid,
-              nickName: this.data.userInfo.nickName,
-              gender: this.data.userInfo.gender,
-              city: this.data.userInfo.city
-            }
-          }).then(res=>{
-            console.log(res)
-          })
-        }
-          //console.log(this.data.userInfo.openid)
+          setTimeout(()=>{
+            if(this.data.isFirstLogin.length==0){//用户重复登录
+              wx.cloud.callFunction({       
+              name: 'firstPushPersonInfo',
+              data: {
+                openid: this.data.userInfo.openid,
+                nickName: this.data.userInfo.nickName,
+                gender: this.data.userInfo.gender,
+                city: this.data.userInfo.city,
+                avatarUrl:this.data.userInfo.avatarUrl,
+                school_name:'西南石油大学'
+              }
+            }).then(res=>{
+              console.log(res)
+            })
+          }
+            //console.log(this.data.userInfo.openid)
+          },2000)
+          
          },2000)
          
       }
@@ -158,7 +164,7 @@ Page({
                   area:this.data.userInfo.city
                 })
 
-                this.getOpenid()
+                this.getOpenid()                         
          //console.log(this.data.userInfo)
          App.globalData=this.data.userInfo
                 setTimeout(()=>{

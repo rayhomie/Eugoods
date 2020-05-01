@@ -1,0 +1,11 @@
+/* components/profile/goods-list/goods-list.wxss */
+.goods-list{
+  background-color: rgb(255, 255,255);
+  border-radius: 20rpx;
+  margin: 8rpx;
+  /* border:3rpx red solid; */
+  height: 200rpx;
+}
+.goods-image{
+ 
+}

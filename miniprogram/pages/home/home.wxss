@@ -43,6 +43,53 @@ swiper-cpn{
   width: 60rpx;
   height: 60rpx;
 }
+.star:active::after{
+  animation-duration:500ms;
+  animation-name:xx;
+  animation-iteration-count:1;
+}
+@keyframes xx{
+  from{
+  width:60rpx;
+  height:60rpx;
+  }
+  50%{
+  width:80rpx;
+  height:80rpx;
+  }
+  to{
+  width:60rpx;
+  height:60rpx;
+  }
+  }
+
+
 .goods-price{
   position: relative;
 }
+
+.headPic{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+}
+.headPicview{
+  position: relative;
+}
+.nickName{
+position: absolute;
+left: 50rpx;
+top: 6rpx;
+font-size: x-small;
+color: rgb(51, 51, 51);
+font-weight: 500;
+}
+.price{
+  
+}
+
+
+
+
+
+

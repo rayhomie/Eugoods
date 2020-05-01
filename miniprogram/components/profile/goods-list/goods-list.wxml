@@ -1,7 +1,7 @@
-<!--components/home/goods/goods.wxml-->
-<view class="goods">
+<!--components/profile/goods-list/goods-list.wxml-->
+<view class="goods-list">
 <view class="goods-image"><slot name="goods-image"></slot></view>
 <view class="goods-name"><slot name="goods-name"></slot></view>
 <view class="goods-price"><slot name="goods-price"></slot></view>
-<view class="goods-headPic"><slot name="goods-headPic"></slot></view>
+<view class="goods-list-star"><slot name="goods-list-star"></slot></view>
 </view>

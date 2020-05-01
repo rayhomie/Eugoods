@@ -36,6 +36,6 @@
 <image bindtap="handleUpload" src="../../assets/img/addPicBtn/timg.jpg"></image>
 </view>
 
-<button bindtap="handlePublish" form-type="submit">发布</button>
+<button bindtap="handlePublish" form-type="submit" >发布</button>
 </view>
 </form>

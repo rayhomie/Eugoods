@@ -53,7 +53,7 @@ Page({
       
       const db=wx.cloud.database()
       const goodsCollection=db.collection("goods")
-      
+      console.log()
       if(good_name!==''&& good_price!=='' && good_describe!==''
        && good_category!==[] && this.data.resource.length>=1){
       goodsCollection.add({
@@ -63,13 +63,38 @@ Page({
           // goods_phone:good_phone,
           goods_describe:good_describe,
           goods_category:good_category,
-          goods_saleStatus:true,
+          goods_status:true,
           goods_image:imagePath,
           school_name:this.data.userinfo.school
           //publisher_info:this.data.userinfo,
         }
-      }).then(res=>{
-        console.log(res)
+      }).then(()=>{
+        wx.showToast({
+          title:'发布成功',
+          mask:true,
+          success:()=>{
+            //console.log(res)
+            this.setData({
+              resource: [],
+              category:[
+                {name:"food",value:"食品",checked:""},
+                {name:"book",value:"书籍",checked:""},
+                {name:"digital",value:"数码",checked:""},
+                {name:"clothes",value:"服装",checked:""},
+                {name:"ornaments",value:"饰品",checked:""},
+                {name:"ohter",value:"其他",checked:""}
+              ],
+              publishInfo:{},
+              userinfo:{}
+            })
+          }
+        })
+        setTimeout(()=>{
+          wx.redirectTo({
+            url:'../profile/issue/issue'
+          })
+        },1000)
+       
       })
     }
     else{

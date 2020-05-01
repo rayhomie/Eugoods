@@ -22,9 +22,9 @@ Component({
    */
   methods: {
     handleItemClick(event){
-      //console.log(event)
+      // console.log(event)
       const index=event.currentTarget.dataset.index
-      //console.log(index)
+      // console.log(index)
       this.setData({
         currentIndex:index
       })

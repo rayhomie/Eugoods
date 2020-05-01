@@ -1,0 +1,71 @@
+/* miniprogram/pages/home/detailsPage/detailsPage.wxss */
+.detailsAll{
+  position: relative;
+  color:rgb(53,53,53);
+  font-size: 14pt;
+}
+.buy{
+  position: absolute;
+  left: 550rpx;
+  top: 50rpx;
+}
+.lianxi{
+  position: fixed;
+  box-sizing: border-box;
+  width:750rpx;
+  height:140rpx ;
+  background-color:#f1f2f6;
+}
+.star{
+  position: fixed;
+  right: 10rpx;
+  top: 15rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.liaotian{
+  position: fixed;
+  left: 500rpx;
+  top: 30rpx;
+  color:rgb(53,53,53);
+  font-size: 14pt;
+}
+.headPic{
+  position: fixed;
+  left: 20rpx;
+  top: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+.nickName{
+position: fixed;
+left: 140rpx;
+top: 40rpx;
+}
+.goodname{
+position: absolute;
+top: 150rpx;
+left: 40rpx;
+}
+.goodcategory{
+  position: absolute;
+  top: 200rpx;
+  left: 40rpx;
+}
+.goodprice{
+position: absolute;
+top: 250rpx;
+left: 40rpx;
+}
+.gooddescribe{
+position: absolute;
+top: 300rpx;
+left: 40rpx;
+}
+.goodPic{
+position: absolute;
+top:500rpx;
+left:55rpx ;
+z-index: -1;
+}

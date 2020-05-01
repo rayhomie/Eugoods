@@ -18,6 +18,8 @@ exports.main = async (event, context) => {
       nickName:event.nickName,
       gender:event.gender,
       city:event.city,
+      avatarUrl:event.avatarUrl,
+      school_name:event.school_name
     }
   })
 }

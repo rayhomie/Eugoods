@@ -1,0 +1,11 @@
+<!--miniprogram/pages/home/detailsPage/detailsPage.wxml-->
+<view class="detailsAll">
+<view>商品名称：{{SingleGoods.goods_name}}</view>
+<view>分类:{{SingleGoods.goods_category}}</view>
+<view>￥{{SingleGoods.goods_price}}</view>
+<view>详情描述:{{SingleGoods.goods_describe}}</view>
+<view>商品上架状态{{SingleGoods.goods_status}}</view>
+<block wx:for="{{SingleGoods.goods_image}}" wx:key="index">
+<image src="{{item}}" mode="widthFix"></image>
+</block>
+</view>

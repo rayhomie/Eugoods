@@ -11,7 +11,7 @@
 .active{
   color: #e64340; 
 }
-.active text{
+.active .text1{
   padding: 20rpx 10rpx;
   border-bottom: 5rpx solid #e64340;
 }

@@ -1,9 +1,9 @@
 <!--miniprogram/pages/home/home.wxml-->
-<view>
+<!-- <view>
 <navigator url="../home/search/search">请输入搜索关键词</navigator>
-</view>
+</view> -->
 <swiper-cpn></swiper-cpn>
-<tab-control titles="{{['流行','新款','精选']}}"
+<tab-control titles="{{['全部','书籍','服装','饰品','食品','数码','其他']}}"
 bind:itemClick="tabControlClick" />
 
 <!-- 
@@ -16,32 +16,37 @@ bind:itemClick="tabControlClick" />
 
 <view class="goodsDisplayLeft">
 <block wx:for="{{displayLeft}}" wx:key="index">
-<goods class="goods-item">
+<goods class="goods-item" catchtap="detailsPage" data-goodid="{{item._id}}" data-publisherinfo="{{item}}" >
 <image class="img" slot="goods-image" src="{{item.goods_image[0]}}" lazy-load mode="widthFix"/>
 <view slot="goods-name">{{item.goods_name}}</view>
-<view slot="goods-price" class="goods-price">￥{{item.goods_price}}
-<image src="../../assets/img/star/collection.png"  class="star" bindtap="zan1" 
+<view slot="goods-price" class="goods-price"><view class="price">￥{{item.goods_price}}</view>
+<image src="../../assets/img/star/collection.png"  class="star" catchtap="zan1" 
 data-goodId="{{item._id}}"  lazy-load="{{true}}" hidden='{{item.show}}' data-index="{{index}}"></image>
- <image src="../../assets/img/star/collection1.png"  class='star' bindtap="zan1" 
+ <image src="../../assets/img/star/collection1.png"  class='star' catchtap="zan1" 
  data-goodId="{{item._id}}" lazy-load="{{true}}" hidden='{{!item.show}}' data-index="{{index}}"></image>
+</view>
+<view slot="goods-headPic" class="headPicview"> <image class="headPic" src="{{item.avatarUrl}}"></image>
+<view class="nickName">{{item.nickName}}</view>
 </view>
 </goods>
 </block>
 </view>
 <view class="goodsDisplayRight">
 <block wx:for="{{displayRight}}" wx:key="index">
-<goods class="goods-item">
+<goods class="goods-item" catchtap="detailsPage" data-goodid="{{item._id}}" data-publisherinfo="{{item}}">
 <image class="img" slot="goods-image" src="{{item.goods_image[0]}}" lazy-load mode="widthFix"/>
 <view slot="goods-name">{{item.goods_name}}</view>
 <view slot="goods-price" class="goods-price">￥{{item.goods_price}}
-<image src="../../assets/img/star/collection.png" class='star' bindtap="zan" 
-data-goodId="{{item._id}}" lazy-load="{{true}}" hidden='{{item.show}}' data-index="{{index}}"></image>
- <image src="../../assets/img/star/collection1.png"  class='star' bindtap="zan" 
+<image src="../../assets/img/star/collection.png" class='star' catchtap="zan" 
+data-goodId="{{item._id}}" lazy-load="{{true}}" hidden='{{item.show}}' data-index="{{index}}" ></image>
+ <image src="../../assets/img/star/collection1.png"  class='star' catchtap="zan" 
  data-goodId="{{item._id}}" lazy-load="{{true}}"
- data-index="{{index}}" hidden='{{!item.show}}'></image>
+ data-index="{{index}}" hidden='{{!item.show}}' ></image>
  </view>
+ <view slot="goods-headPic" class="headPicview"> <image class="headPic" src="{{item.avatarUrl}}"></image>
+<view class="nickName">{{item.nickName}}</view>
+</view>
 </goods>
 </block>
 </view>
-
 </view>
