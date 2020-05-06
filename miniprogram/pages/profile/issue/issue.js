@@ -1,5 +1,60 @@
 // miniprogram/pages/profile/issue/issue.js
 Page({
+  cancel(e){
+    this.setData({
+      loadingshow:true
+    })
+   // console.log(e.currentTarget.dataset.goodid)
+    const goodid=e.currentTarget.dataset.goodid
+    if(App.globalData==undefined){
+      this.setData({
+        loadingshow:false
+      })
+      wx.showToast({
+        title: '请先登录',
+        icon:'none',
+        mask:'true'
+      })
+    }else{
+    wx.cloud.callFunction({
+      name:'deleteGood',
+      data:{
+        _id:goodid
+      },
+      success:()=>{
+        
+        wx.showToast({
+          title: '下架商品成功',
+          icon:'none', 
+          mask:'true'
+        })
+        //更新页面
+        wx.cloud.callFunction({
+          name:'getMyPublishGoods',
+          complete:(res)=>{
+            if(App.globalData==undefined){
+              wx.showToast({
+                title: '请先登录',
+                icon:'none',
+                mask:'true'
+              })
+            }this.setData({
+              loadingshow:false
+            })
+            //console.log(res.result.data[0])
+           if(res.result.data[0]._openid==App.globalData.openid){
+            this.setData({
+              myGoods:res.result.data
+            })
+            //console.log(this.data.myGoods)
+          }
+          
+          }
+        })
+      }
+    })}
+
+  },
   detailsPage(e){
     wx.navigateTo({
       url:"../issue/detailsPage/detailsPage",
@@ -18,7 +73,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    myGoods:[]
+    myGoods:[],
+    loadingshow:true
   },
 
   /**
@@ -29,6 +85,9 @@ Page({
       name:'getMyPublishGoods',
       complete:(res)=>{
         if(App.globalData==undefined){
+          this.setData({
+            loadingshow:false
+          })
           wx.showToast({
             title: '请先登录',
             icon:'none',
@@ -37,6 +96,9 @@ Page({
         }
         //console.log(res.result.data[0])
        if(res.result.data[0]._openid==App.globalData.openid){
+        this.setData({
+          loadingshow:false
+        })
         this.setData({
           myGoods:res.result.data
         })

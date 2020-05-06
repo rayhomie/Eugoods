@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "my-info":"../../components/profile/my-info/my-info"
+    "my-info":"../../components/profile/my-info/my-info",
+    "loading-cpn":"../../components/loading/loading-cpn"
   },
   "navigationBarTitleText":"我的"
 }

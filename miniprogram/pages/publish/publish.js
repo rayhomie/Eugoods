@@ -33,10 +33,14 @@ Page({
   //发布处理
   handlePublish() {
     //图片上传
+    this.setData({
+      loadingshow:true
+    })
       const imagePath=[]
       const good_name =this.data.publishInfo.otherSub.good_name
       const good_price =parseFloat(this.data.publishInfo.otherSub.good_price)
-      // const good_phone =this.data.publishInfo.otherSub.good_phone
+     const good_phone =[this.data.publishInfo.otherSub.good_phone1,this.data.publishInfo.otherSub.good_phone2,
+      this.data.publishInfo.otherSub.good_phone3]
       const good_describe =this.data.publishInfo.otherSub.good_describe
       const good_category =this.data.publishInfo.category
       
@@ -55,12 +59,41 @@ Page({
       const goodsCollection=db.collection("goods")
       console.log()
       if(good_name!==''&& good_price!=='' && good_describe!==''
-       && good_category!==[] && this.data.resource.length>=1){
+       && good_category!==[] && this.data.resource.length>=1 && 
+       !(this.data.publishInfo.otherSub.good_phone1 ===''&&
+       this.data.publishInfo.otherSub.good_phone2 ==='' &&
+       this.data.publishInfo.otherSub.good_phone3 ==='')  ){
+
+//消息推送发布     
+const openid=App.globalData.openid
+wx.requestSubscribeMessage({
+  tmplIds: ['Z6R9QUF4hWU20lZAMtcv7WOXmVWdEU9w2gRZjIAAD9I','zhvDiZGHRDY_J1b06rTbeTmq0fGkYYwUFmjPRP-eZhs',
+  'zwE4e3DvHFEkDxIijAFSn7b0cqj022H7799eUDlBwXo'],
+  success:(res)=>{
+    console.log(res)
+    wx.cloud.callFunction({
+      name:"publishTemplateMessage",
+      data:{
+        openid:openid,
+        good_name:good_name
+      },
+      success:res=>{
+        console.log(res)
+      },fail:res=>{
+        console.log(res)
+      }
+    })
+  },
+  fail:err=>{console.log(err)}
+})
+
+
+        //操作数据库
       goodsCollection.add({
         data:{
           goods_name:good_name,
           goods_price:good_price,
-          // goods_phone:good_phone,
+           goods_phone:good_phone,
           goods_describe:good_describe,
           goods_category:good_category,
           goods_status:true,
@@ -69,6 +102,9 @@ Page({
           //publisher_info:this.data.userinfo,
         }
       }).then(()=>{
+        this.setData({
+          loadingshow:false
+        })
         wx.showToast({
           title:'发布成功',
           mask:true,
@@ -113,10 +149,10 @@ Page({
   },
   //发布按钮触发事件改变data中的值
   handleSubmit(event){
-    //console.log(event.detail.value)
+  // console.log(event.detail.value)
     const submitdata=event.detail.value
     this.data.publishInfo.otherSub=submitdata
-    //console.log(this.data.publishInfo)
+   //console.log(this.data.publishInfo)
   },
 
   /**
@@ -133,7 +169,8 @@ Page({
       {name:"ohter",value:"其他",checked:""}
     ],
     publishInfo:{},
-    userinfo:{}
+    userinfo:{},
+    loadingshow:false
   },
 
   /**
@@ -154,22 +191,29 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    const that=this
     this.setData({
       userinfo:App.globalData
     })
    // console.log(App.globalData)
    // console.log(this.data.userinfo)
     if(this.data.userinfo==undefined){
-      wx.showToast({
-        title:'请登录之后再试',
-        icon:'loading',
-        mask:'true'
+      // wx.showToast({
+      //   title:'跳转登录后再试',
+      //   icon:'none',
+      //   mask:'true'
+      // })
+      this.setData({
+        loadingshow:true
       })
       setTimeout(function(){
         wx.switchTab({
           url:"/pages/profile/profile"
         })
-      },1000)
+        that.setData({
+          loadingshow:false
+        })
+      },2000)
     
     }
   },

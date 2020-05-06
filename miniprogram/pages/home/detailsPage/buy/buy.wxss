@@ -1,0 +1,47 @@
+/* miniprogram/pages/home/detailsPage/buy/buy.wxss */
+.h1 {
+  color: rgb(128, 128, 128);
+  font-size: 14pt;
+  text-transform: uppercase;
+  font-weight: 500;
+  display:flex;
+align-items:center;
+justify-content:center;
+}
+.h2 {
+  color: rgb(128, 128, 128);
+  font-size: 14pt;
+  text-transform: uppercase;
+  font-weight: 500;
+  position: absolute;
+  top: 650rpx;
+  left: 7%;
+}
+.input{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgba(52,152,219, 0.571) ;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: rgba(46, 204, 112, 0.708);
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.input:hover{
+  background: rgba(46, 204, 112, 0.171);
+}
+.buy:hover{
+  background: rgba(46, 204, 112, 0.171);
+}
+.buy{
+  color:rgba(53, 53, 53, 0.645);
+  font-size: 14pt;
+  border: 2px solid rgba(52,152,219, 0.571);
+  border-radius: 48rpx;
+  position: absolute;
+  left: 325rpx;
+}

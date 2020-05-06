@@ -1,1 +1,53 @@
 /* miniprogram/pages/profile/sale/sale.wxss */
+.list{
+  position: relative;
+}
+.image{
+  height: 150rpx;
+  width: 150rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 35rpx;
+  border-radius: 30rpx;
+}
+.name{
+  position: absolute;
+  width: 360rpx;
+  height: 100rpx;
+  left: 200rpx;
+  top: 30rpx;
+}
+.price{
+  position: absolute;
+  left: 180rpx;
+  top: 140rpx;
+}
+.status{
+  position: absolute;
+  top: 100rpx;
+  left: 620rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.boughtphone{
+  position: absolute;
+  width: 320rpx;
+  top: 70rpx;
+  left: 330rpx;
+  font-size: x-small;
+}
+.cancelBuy{
+  position: absolute;
+  width: 10rpx;
+  padding: 0;
+  height: 140rpx;
+  top: 30rpx;
+  font-size: 5rpx;
+  left: 650rpx;
+  color:rgba(53, 53, 53, 0.645);
+  border: 2px solid rgba(52,152,219, 0.571);
+  border-radius: 48rpx;
+}
+.cancelBuy:hover{
+  background: rgba(46, 204, 112, 0.171);
+}

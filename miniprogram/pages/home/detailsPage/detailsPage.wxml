@@ -1,7 +1,7 @@
 <!--miniprogram/pages/home/detailsPage/detailsPage.wxml-->
 <view class="detailsAll">
 <view class="goodname">商品名称：{{SingleGoods.goods_name}}</view>
-<view class="goodcategory">分类:{{SingleGoods.goods_category}}</view>
+<!-- <view class="goodcategory">分类:{{SingleGoods.goods_category}}</view> -->
 <view class="goodprice">￥{{SingleGoods.goods_price}}</view>
 <view class="gooddescribe">详情描述:{{SingleGoods.goods_describe}}</view>
 <view class="lianxi">
@@ -11,7 +11,7 @@
 data-goodid="{{SingleGoods._id}}" data-show="{{show}}"></image>
 <image src="../../../assets/img/star/collection1.png"  class='star' catchtap="zan" hidden='{{!show}}' 
 data-goodid="{{SingleGoods._id}}" data-show="{{show}}"></image>
-<button class="liaotian" size="mini" >聊一下</button>
+<button class="liaotian" size="mini" catchtap="buy"  >立即预订</button>
 </view>
 <!-- <button class="buy" size="mini">立即购买</button> -->
 <view class="goodPic">
@@ -19,3 +19,4 @@ data-goodid="{{SingleGoods._id}}" data-show="{{show}}"></image>
 <image src="{{item}}" mode="widthFix" style="border-radius: 40rpx;"></image>
 </block></view>
 </view>
+<loading-cpn wx:if="{{loadingshow}}"></loading-cpn>

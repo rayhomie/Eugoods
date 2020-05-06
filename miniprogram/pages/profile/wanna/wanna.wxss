@@ -29,3 +29,9 @@
   width: 100rpx;
   height: 100rpx;
 }
+.star:active{
+  width:110rpx;
+  height:110rpx;
+  transition-duration:500ms;
+  transition-timing-function:ease;
+}

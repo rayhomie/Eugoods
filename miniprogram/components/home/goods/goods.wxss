@@ -1,6 +1,6 @@
 /* components/home/goods/goods.wxss */
 .goods{
-  background-color: rgb(255,255,255);
+  background-color: rgba(176, 213, 223, 0.178);
   border-radius: 20rpx;
   /* border:2rpx solid red; */
   display: flex;
@@ -8,6 +8,7 @@
   margin: 5rpx;
   box-sizing: border-box;
   padding: 0rpx;
+  color: rgba(128, 128, 128, 0.534);
 }
 
 .goods-name{

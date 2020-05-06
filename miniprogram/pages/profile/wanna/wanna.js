@@ -140,7 +140,8 @@ wx.navigateTo({
    * 页面的初始数据
    */
   data: {
-    starGoods:[]
+    starGoods:[],
+    loadingshow:true
   },
 
   /**
@@ -153,12 +154,19 @@ wx.navigateTo({
        // console.log(res)
         //console.log(res.result.list)
         if(App.globalData==undefined){
+          this.setData({
+            loadingshow:false
+          })
           wx.showToast({
             title: '请先登录',
             icon:'none',
             mask:'true'
           })
         }
+        else{
+          this.setData({
+            loadingshow:false
+          })
         for(var i=0;i<res.result.list.length;i++){
           if(res.result.list[i]._openid==App.globalData.openid){
             this.setData({
@@ -180,6 +188,7 @@ wx.navigateTo({
           })
          // console.log(this.data.starGoods)
         }
+      }
       },
       fail:res=>{
         console.log(res)

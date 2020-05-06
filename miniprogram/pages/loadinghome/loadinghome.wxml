@@ -1,0 +1,14 @@
+<!--miniprogram/pages/loadinghome/loadinghome.wxml-->
+<div class="main-container">
+<div class="line-container">
+<div class="loading loading3">
+        <div class="wrapper">
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </div>
+      </div>
+</div>
+</div>

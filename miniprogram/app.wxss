@@ -30,8 +30,8 @@ page {
   margin-top: 40rpx;
   height: 140rpx;
   width: 100%;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(176, 213, 223, 0.2);
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
   border-left: none;
   border-right: none;
   display: flex;
@@ -46,7 +46,7 @@ page {
   margin: 20rpx;
   border-radius: 50%;
   background-size: cover;
-  background-color: white;
+  background: rgba(176, 213, 223, 0);
 }
 
 .userinfo-avatar:after {
@@ -55,8 +55,8 @@ page {
 
 .userinfo-nickname {
   font-size: 32rpx;
-  color: #007aff;
-  background-color: white;
+  color:  #b0d5df;
+  background-color:rgba(176, 213, 223, 0);
   background-size: cover;
 }
 

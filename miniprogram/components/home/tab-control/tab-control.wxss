@@ -3,15 +3,16 @@
   display: flex;
   height: 88rpx;
   line-height:88rpx;
+  color: rgba(176,213,223,1);
 }
 .tab-item{
   flex: 1;
   text-align: center;
 }
 .active{
-  color: #e64340; 
+  color: #66c18c; 
 }
 .active .text1{
   padding: 20rpx 10rpx;
-  border-bottom: 5rpx solid #e64340;
+  border-bottom: 5rpx solid #66c18c;
 }

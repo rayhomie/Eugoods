@@ -126,7 +126,8 @@ Page({
     school:'',
     openid:{},
     isshowUpdateSchool:false,
-    isFirstLogin:[]//唯一插入用户信息
+    isFirstLogin:[],//唯一插入用户信息
+    loadingshow:true
   },
 
   /**
@@ -166,11 +167,14 @@ Page({
 
                 this.getOpenid()                         
          //console.log(this.data.userInfo)
+               this.setData({
+                loadingshow:false
+               })
          App.globalData=this.data.userInfo
                 setTimeout(()=>{
                   wx.showToast({
-                    title:'重新登录成功',
-                    icon:'success',
+                    title:'自动登录成功',
+                    icon:'none',
                     mask:'true'
                   })
                   this.setData({
@@ -184,6 +188,9 @@ Page({
             }
           })
         }else{
+          this.setData({
+            loadingshow:false
+           })
           // this.showSettingToast("请授权")
         }
       }

@@ -1,6 +1,6 @@
 /* components/profile/goods-list/goods-list.wxss */
 .goods-list{
-  background-color: rgb(255, 255,255);
+  background-color: rgba(176, 213, 223, 0.178);
   border-radius: 20rpx;
   margin: 8rpx;
   /* border:3rpx red solid; */

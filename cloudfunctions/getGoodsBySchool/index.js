@@ -49,7 +49,8 @@ exports.main = async(event, context) => {
       _openid:true,
       goods_category:true,
       goods_price:true,
-      avatarUrl:true
+      avatarUrl:true,
+      goods_phone:true
     })
     .end()
   return goodsBySchool

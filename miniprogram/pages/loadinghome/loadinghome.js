@@ -1,4 +1,4 @@
-// miniprogram/pages/communication/communication.js
+// miniprogram/pages/loadinghome/loadinghome.js
 Page({
 
   /**
@@ -12,14 +12,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    setTimeout(()=>{
+      wx.switchTab({
+        url:'../home/home'
+      })
+    },2000)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**

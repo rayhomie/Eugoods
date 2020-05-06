@@ -1,4 +1,7 @@
 /* miniprogram/pages/publish/publish.wxss */
+page{
+  background-color: rgb(246,246, 246);
+}
 .picture{
     display: flex;
     flex-wrap:wrap;
@@ -7,8 +10,8 @@
 image{
   border-radius: 10rpx;
   margin: 15rpx;
-  width: 220rpx;
-  height: 220rpx;
+  width: 140rpx;
+  height: 140rpx;
 }
 .pic{
   padding: 0;
@@ -23,4 +26,85 @@ image{
   top:-27rpx;
   width: 40rpx;
   height: 40rpx;
+}
+
+
+
+.box {
+  width: 280px;
+  padding: 40px;
+  position: absolute;
+  top: 1200rpx;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f6f6f6;
+  text-align: center;
+}
+.h1 {
+  color: rgb(128, 128, 128);
+  font-size: 14pt;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.h2 {
+  color: rgba(128, 128, 128,0.4);
+  font-size: 8pt;
+  text-transform: uppercase;
+  font-weight: 500;
+  position: absolute;
+  top: 2%;
+  left: 130rpx;
+}
+.input{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgba(52,152,219, 0.571) ;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: rgba(46, 204, 112, 0.708);
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.radio{
+  margin: 10rpx;
+  border: 0;
+  background: none;
+  color: rgb(128, 128, 128);
+  border: 4rpx solid rgba(52,152,219, 0.571);
+  padding: 40rpx 40rpx;
+  width: 100rpx;
+  outline: none;
+  border-radius: 100%;
+  transition: 0.25s;
+}
+.radio:hover{
+  background: rgba(46, 204, 112, 0.171);
+}
+.input:hover{
+  background: rgba(46, 204, 112, 0.171);
+}
+.input:focus,
+.input:focus{
+  width: 280px;
+  border-color: rgba(46, 204, 112, 0.571);
+}
+.fabu{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgba(46, 204, 112, 0.571);
+  padding: 14px 40px;
+  outline: none;
+  color: rgb(128, 128, 128);
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.fabu:hover{
+  background: rgba(46, 204, 112, 0.571);
 }

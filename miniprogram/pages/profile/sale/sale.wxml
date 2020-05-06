@@ -1,2 +1,22 @@
 <!--miniprogram/pages/profile/sale/sale.wxml-->
-<text>miniprogram/pages/profile/sale/sale.wxml</text>
+<view class="displayAll">
+<block wx:for="{{myGoods}}" wx:key="index">
+<goods-list class="list" catchtap="detailsPage" data-goodid="{{item._id}}">
+<image class="image" slot="goods-image" src="{{item.goods_image[0]}}" lazy-load="{{true}}" mode="aspectFill"></image>
+<view class="name" slot="goods-name">{{item.goods_name}}</view>
+<view class="price" slot="goods-price">￥{{item.goods_price}}</view>
+<!-- <view class="status" slot="goods-list-star">{{item.goods_status}}</view> -->
+<view class="boughtphone" slot="goods-phone" >
+<view>buyer phone:{{item.bought_phone[0]}}</view>
+<view>buyer wx:{{item.bought_phone[1]}}</view>
+<view>buyer QQ:{{item.bought_phone[2]}}</view>
+</view>
+<button size="mini" class="cancelBuy" slot="goods-list-star" catchtap="cancel" data-goodid="{{item._id}}"
+data-goodname="{{item.goods_name}}" data-openid="{{item._openid}}">取消</button>
+</goods-list>
+
+
+
+</block>
+</view>
+<loading-cpn wx:if="{{loadingshow}}"></loading-cpn>

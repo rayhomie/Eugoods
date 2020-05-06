@@ -1,7 +1,40 @@
 // miniprogram/pages/home/detailsPage/detailsPage.js
 Page({
+  buy(e){
+    if(App.globalData==undefined){
+      wx.showToast({
+        title:'请登录之后再试',
+        icon:'none',
+        mask:'true'
+      })
+    }else{
+   console.log(this.data.SingleGoods)
+   wx.navigateTo({
+    url:"../detailsPage/buy/buy",
+    events:{
+      acceptDataFromOpenedPage: function(data) {
+        console.log(data)
+      }
+    },
+    success: (res)=> {
+      // 通过eventChannel向被打开页面传送数据
+      res.eventChannel.emit('acceptDataFromOpenerPage', {
+        data: this.data.SingleGoods._id,goodname:this.data.SingleGoods.goods_name,
+        goodphone:this.data.SingleGoods.goods_phone,openid:this.data.SingleGoods._openid
+      })
+    }
+  })
+}
+  },
 
   zan(e){
+    if(App.globalData==undefined){
+      wx.showToast({
+        title:'请登录后再试',
+        icon:'none',
+        mask:'true'
+      })
+    }else{
     console.log(e.currentTarget.dataset)
     console.log(e.currentTarget.dataset.goodid)
     if(this.data.show==false){
@@ -29,6 +62,7 @@ Page({
         }
       })
     }
+  }
   },
   /**
    * 页面的初始数据
@@ -38,7 +72,8 @@ Page({
     avatarUrl:'',
     nickName:'',
     show:false,
-    star_list:[]
+    star_list:[],
+    loadingshow:true
   },
 
   /**
@@ -49,6 +84,7 @@ Page({
     const eventChannel = this.getOpenerEventChannel()
     // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
     eventChannel.on('acceptDataFromOpenerPage', function(data) {
+      console.log(data)
       // console.log(data.data)
       //console.log(data.publisherinfo)
       wx.cloud.callFunction({
@@ -61,7 +97,8 @@ Page({
           that.setData({
             SingleGoods:res.result.data[0],
             nickName:data.publisherinfo.nickName,
-            avatarUrl:data.publisherinfo.avatarUrl
+            avatarUrl:data.publisherinfo.avatarUrl,
+            loadingshow:false
           })
           //console.log(that.data.SingleGoods)
         // console.log(that.data.avatarUrl)
@@ -69,6 +106,7 @@ Page({
         }
       })
     })
+    
     //查询收藏状态是否被收藏
     wx.cloud.callFunction({
       name:'queryStar',

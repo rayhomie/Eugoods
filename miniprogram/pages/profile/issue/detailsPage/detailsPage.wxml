@@ -1,11 +1,15 @@
 <!--miniprogram/pages/home/detailsPage/detailsPage.wxml-->
 <view class="detailsAll">
-<view>商品名称：{{SingleGoods.goods_name}}</view>
-<view>分类:{{SingleGoods.goods_category}}</view>
-<view>￥{{SingleGoods.goods_price}}</view>
-<view>详情描述:{{SingleGoods.goods_describe}}</view>
-<view>商品上架状态{{SingleGoods.goods_status}}</view>
+<view class="goodname">商品名称：{{SingleGoods.goods_name}}</view>
+<!-- <view>分类:{{SingleGoods.goods_category}}</view> -->
+<view class="goodprice">￥{{SingleGoods.goods_price}}</view>
+<view class="gooddescribe">详情描述:{{SingleGoods.goods_describe}}</view>
+<view class="goodstatus" wx:if="{{SingleGoods.goods_status}}">商品状态:上架中</view>
+<view class="goodstatus" wx:if="{{!SingleGoods.goods_status}}">商品状态：被预订</view>
+<view class="goodPic">
 <block wx:for="{{SingleGoods.goods_image}}" wx:key="index">
 <image src="{{item}}" mode="widthFix"></image>
 </block>
 </view>
+</view>
+<loading-cpn wx:if="{{loadingshow}}"></loading-cpn>

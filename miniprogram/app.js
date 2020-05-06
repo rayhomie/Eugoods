@@ -1,7 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
-    
+
     
       wx.cloud.init({
         // env 参数说明：
@@ -11,7 +11,8 @@ App({
          env: 'rayhomie',
         traceUser: true,
       })
-    
+     
+     
 
   },
   globalData:{

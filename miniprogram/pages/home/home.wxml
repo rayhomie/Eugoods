@@ -50,3 +50,6 @@ data-goodId="{{item._id}}" lazy-load="{{true}}" hidden='{{item.show}}' data-inde
 </block>
 </view>
 </view>
+
+
+<loading-cpn wx:if="{{loadingshow}}"></loading-cpn>

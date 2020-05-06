@@ -1,1 +1,33 @@
 /* components/my-info/my-info.wxss */
+.decide{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgba(46, 204, 112, 0.571);
+  padding: 14px 40px;
+  outline: none;
+  color: rgba(128, 128, 128,0.5);
+  border-radius: 24px;
+  transition: 0.25s;
+  position: absolute;
+  left: 310rpx;
+  top: 1000rpx;
+}
+.decide:hover{
+  background: rgba(46, 204, 112, 0.571);
+}
+.all{
+  color: rgba(176, 213, 223,1);
+  font-weight: 400;
+  position: absolute;
+  top: 410rpx;
+}
+.item{
+  background: rgba(246, 246, 246,0.05);
+}
+.center{
+background-color: rgba(246, 246, 246,0.05);
+height: 50rpx;
+}

@@ -1,34 +1,39 @@
 <!--miniprogram/pages/profile/profile.wxml-->
 <view class="myInfo">
 <view class="userinfo" >
- <button wx:if="{{!hasUserInfo}}" open-type="getUserInfo"
+ <button class="firstlogin" wx:if="{{!hasUserInfo}}" open-type="getUserInfo"
  bindgetuserinfo="getUserInfo">使用微信授权登录</button>
  <image bindtap="bindViewTap" class="userinfo-avatar" 
  src="{{userInfo.avatarUrl}}" mode="cover"></image>
  <view class="userinfo-nickname">
  <text class="userinfo-nick">{{userInfo.nickName}}</text>
  <text class="userinfo-gender">{{gender}}</text>
- <text class="userinfo-area">{{area}}</text>
+ <!-- <text class="userinfo-area">{{area}}</text> -->
 </view>
 </view>
-<button wx:if="{{isshowUpdateSchool}}" bindtap="serveltUpdateInfoPage">修改学校信息</button>
+<button class="schoolInfo" wx:if="{{isshowUpdateSchool}}" bindtap="serveltUpdateInfoPage" style="width:100%; font-weight:400">修改学校</button>
 </view>
 
 
 
 
-<button class="school" bindtap="selectSchool" wx:if="{{showSelectBtn}}">点击选择高校</button>
+<button class="school" bindtap="selectSchool" style="width:100%; font-weight:400" wx:if="{{showSelectBtn}}">点击选择高校</button>
 
 <my-info bind:decide="decide" wx:if="{{showSelectSchool}}"></my-info>
 
 <view  class="myOrder">
 <navigator class="myOrder1" url="../profile/issue/issue">我发布的</navigator>
-<navigator class="myOrder1" url="../profile/sale/sale">我卖出的</navigator>
-<navigator class="myOrder1" url="../profile/bought/bought">我买到的</navigator>
+<navigator class="myOrder1" url="../profile/sale/sale">我被订的</navigator>
+<navigator class="myOrder1" url="../profile/bought/bought">我预订的</navigator>
 <navigator class="myOrder1" url="../profile/wanna/wanna">我想要的</navigator>
 </view>
 
-<view class="customerService">
+<!-- <view class="customerService">
 <navigator url="../profile/customerService/customerService">客服中心</navigator>
-</view>
+</view> -->
+<text class="h1">(建议用户发布的好物被预订后，及时下架好物!)</text>
+<text class="h2">Copyright © 2020 by Rayhomie</text>
+<text class="h3">若有问题联系:1572801584@qq.com</text>
+<!-- 加载 -->
+<loading-cpn wx:if="{{loadingshow}}"></loading-cpn>
 

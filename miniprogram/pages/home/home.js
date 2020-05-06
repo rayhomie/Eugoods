@@ -4,6 +4,9 @@ Page({
   tabControlClick(event){
    // console.log(event.detail)
     if(event.detail.index==2){
+      this.setData({
+        loadingshow:true
+      })
       wx.cloud.callFunction({
         name:'getGoodsByCondition',
         data:{
@@ -11,6 +14,7 @@ Page({
           goodsCategory:'clothes'
         },
         success:res=>{
+         
          // console.log(res.result.list)
           this.setData({
             goods:[],
@@ -48,6 +52,9 @@ Page({
             displayRight:this.data.displayRight
           })
         }
+        this.setData({
+          loadingshow:false
+        })
         //console.log(this.data.goods)
        // console.log(this.data.displayLeft)
         //console.log(this.data.displayRight)
@@ -115,6 +122,9 @@ Page({
         }
        })}})}
        if(event.detail.index==1){
+        this.setData({
+          loadingshow:true
+        })
         wx.cloud.callFunction({
           name:'getGoodsByCondition',
           data:{
@@ -122,6 +132,7 @@ Page({
             goodsCategory:'book'
           },
           success:res=>{
+           
             //console.log(res.result.list)
             this.setData({
               goods:[],
@@ -159,6 +170,9 @@ Page({
               displayRight:this.data.displayRight
             })
           }
+          this.setData({
+            loadingshow:false
+          })
           //console.log(this.data.goods)
          // console.log(this.data.displayLeft)
           //console.log(this.data.displayRight)
@@ -225,6 +239,9 @@ Page({
             })
           }
          })}})} if(event.detail.index==5){
+          this.setData({
+            loadingshow:true
+          })
           wx.cloud.callFunction({
             name:'getGoodsByCondition',
             data:{
@@ -232,6 +249,7 @@ Page({
               goodsCategory:'digital'
             },
             success:res=>{
+             
               //console.log(res.result.list)
               this.setData({
                 goods:[],
@@ -269,6 +287,9 @@ Page({
                 displayRight:this.data.displayRight
               })
             }
+            this.setData({
+              loadingshow:false
+            })
             //console.log(this.data.goods)
            // console.log(this.data.displayLeft)
             //console.log(this.data.displayRight)
@@ -335,6 +356,9 @@ Page({
               })
             }
            })}})} if(event.detail.index==3){
+            this.setData({
+              loadingshow:true
+            })
             wx.cloud.callFunction({
               name:'getGoodsByCondition',
               data:{
@@ -342,6 +366,7 @@ Page({
                 goodsCategory:'ornaments'
               },
               success:res=>{
+               
                 //console.log(res.result.list)
                 this.setData({
                   goods:[],
@@ -379,6 +404,9 @@ Page({
                   displayRight:this.data.displayRight
                 })
               }
+              this.setData({
+                loadingshow:false
+              })
               //console.log(this.data.goods)
              // console.log(this.data.displayLeft)
               //console.log(this.data.displayRight)
@@ -445,6 +473,9 @@ Page({
                 })
               }
              })}})} if(event.detail.index==4){
+              this.setData({
+                loadingshow:true
+              })
               wx.cloud.callFunction({
                 name:'getGoodsByCondition',
                 data:{
@@ -452,6 +483,7 @@ Page({
                   goodsCategory:'food'
                 },
                 success:res=>{
+                
                  // console.log(res.result.list)
                   this.setData({
                     goods:[],
@@ -489,6 +521,9 @@ Page({
                     displayRight:this.data.displayRight
                   })
                 }
+                this.setData({
+                  loadingshow:false
+                })
                 //console.log(this.data.goods)
                // console.log(this.data.displayLeft)
                 //console.log(this.data.displayRight)
@@ -555,6 +590,9 @@ Page({
                   })
                 }
                })}})} if(event.detail.index==6){
+                this.setData({
+                  loadingshow:true
+                })
                 wx.cloud.callFunction({
                   name:'getGoodsByCondition',
                   data:{
@@ -562,6 +600,7 @@ Page({
                     goodsCategory:'ohter'//数据库打错了
                   },
                   success:res=>{
+                 
                    // console.log(res.result.list)
                     this.setData({
                       goods:[],
@@ -599,6 +638,9 @@ Page({
                       displayRight:this.data.displayRight
                     })
                   }
+                  this.setData({
+                    loadingshow:false
+                  })
                   //console.log(this.data.goods)
                  // console.log(this.data.displayLeft)
                   //console.log(this.data.displayRight)
@@ -665,12 +707,16 @@ Page({
                     })
                   }
                  })}})}if(event.detail.index==0){
+                  this.setData({
+                    loadingshow:true
+                  })
                   wx.cloud.callFunction({
                     name:"getGoodsBySchool",
                     data:{
                       school_name:'西南石油大学'
                     },
                     complete: res => {
+                    
                      // console.log( res)
                      this.setData({
                       goods:[],
@@ -708,6 +754,9 @@ Page({
                        displayRight:this.data.displayRight
                      })
                    }
+                   this.setData({
+                    loadingshow:false
+                  })
                    //console.log(this.data.goods)
                   // console.log(this.data.displayLeft)
                    //console.log(this.data.displayRight)
@@ -876,50 +925,15 @@ Page({
     displayLeft:[],//goods里面有show：flase
     displayRight:[],//goods里面有show：flase
     star_list:[],
+    loadingshow:true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //查询所有商品
-    // wx.cloud.callFunction({
-    //   name:'getAllGoods',
-    //   complete: res => {
-    //     // console.log( res)
-    //     this.setData({
-    //       goods:res.result.data
-    //     })
-    //    console.log(this.data.goods)
-    //   //变量goods对象获取index值
-    //   for(var i=0;i<this.data.goods.length;i++){       
-    //    if(i%2==0){
-    //     this.setData({
-    //       displayLeft:this.data.displayLeft.concat(this.data.goods[i]),
-    //     })
-    //    }else{
-    //     this.setData({
-    //       displayRight:this.data.displayRight.concat(this.data.goods[i]),       
-    //     })
-    //    }
-    //   }
-    //   //注入show;false
-    //   for(var i=0;i<this.data.displayLeft.length;i++){  
-    //     this.data.displayLeft[i].show=false
-    //     this.setData({
-    //       displayLeft:this.data.displayLeft
-    //     })
-    //   }//注入show;false
-    //   for(var i=0;i<this.data.displayRight.length;i++){  
-    //     this.data.displayRight[i].show=false
-    //     this.setData({
-    //       displayRight:this.data.displayRight
-    //     })
-    //   }
-    //  // console.log(this.data.goods)
-    // // console.log(this.data.displayLeft)
-    //   //console.log(this.data.displayRight)
-    //  }})
+ 
+
     
 
      wx.cloud.callFunction({
@@ -928,6 +942,9 @@ Page({
          school_name:'西南石油大学'
        },
        complete: res => {
+        this.setData({
+          loadingshow:false
+        })
         // console.log( res)
         this.setData({
           goods:res.result.list
@@ -1041,6 +1058,7 @@ Page({
    */
   onReady: function () {
     this.animation = wx.createAnimation()
+   
   },
 
   /**
@@ -1068,12 +1086,18 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    this.setData({
+      loadingshow:true
+    })
     wx.cloud.callFunction({
       name:"getGoodsBySchool",
       data:{
         school_name:'西南石油大学'
       },
       complete: res => {
+        this.setData({
+          loadingshow:false
+        })
        // console.log(res)
        this.setData({
          goods:res.result.list

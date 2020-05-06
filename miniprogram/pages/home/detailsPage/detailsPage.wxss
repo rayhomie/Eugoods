@@ -1,7 +1,7 @@
 /* miniprogram/pages/home/detailsPage/detailsPage.wxss */
 .detailsAll{
   position: relative;
-  color:rgb(53,53,53);
+  color:rgba(53,53,53,0.645);
   font-size: 14pt;
 }
 .buy{
@@ -23,12 +23,36 @@
   width: 100rpx;
   height: 100rpx;
 }
+.star:active{
+  width:110rpx;
+  height:110rpx;
+  transition-duration:500ms;
+  transition-timing-function:ease;
+}
+/* .fabu{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgba(46, 204, 112, 0.571);
+  padding: 14px 40px;
+  outline: none;
+  color: rgb(128, 128, 128);
+  border-radius: 24px;
+  transition: 0.25s;
+} */
+.liaotian:hover{
+  background: rgba(46, 204, 112, 0.171);
+}
 .liaotian{
   position: fixed;
-  left: 500rpx;
+  left: 450rpx;
   top: 30rpx;
-  color:rgb(53,53,53);
+  color:rgba(53, 53, 53, 0.645);
   font-size: 14pt;
+  border: 2px solid #b0d5df;
+  border-radius: 48rpx;
 }
 .headPic{
   position: fixed;
@@ -65,7 +89,7 @@ left: 40rpx;
 }
 .goodPic{
 position: absolute;
-top:500rpx;
+top:600rpx;
 left:55rpx ;
 z-index: -1;
 }

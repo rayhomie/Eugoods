@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    SingleGoods:{}
+    SingleGoods:{},
+    loadingshow:true
   },
 
   /**
@@ -25,7 +26,8 @@ Page({
         complete:res=>{
           //console.log(res.result.data[0])
           that.setData({
-            SingleGoods:res.result.data[0]
+            SingleGoods:res.result.data[0],
+            loadingshow:false
           })
          // console.log(that.data.SingleGoods)
         }

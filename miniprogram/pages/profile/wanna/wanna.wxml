@@ -13,3 +13,4 @@ hidden='{{!item.show}}' data-index="{{index}}" catchtap="zan" data-goodId="{{ite
 </goods-list>
 </block>
 </view>
+<loading-cpn wx:if="{{loadingshow}}"></loading-cpn>
