@@ -838,7 +838,7 @@ Page({
     const vm = this;
   //  console.log(e.currentTarget.dataset)
     const _index = e.currentTarget.dataset.index;
-    let _msg = [...vm.data.displayRight]; // msg的引用
+    let _msg = [...vm.data.displayRight]; // msg的引用（深拷贝）
    
     _msg[_index]['show'] = !vm.data.displayRight[_index]['show'];
    vm.setData({

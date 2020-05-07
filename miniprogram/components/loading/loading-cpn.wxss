@@ -34,7 +34,7 @@
 .rect {
   width: 5px;
   height: 30px;
-  background-color:#4b9cdb;
+  background-color:rgba(176, 213, 223, 1);
 }
 
 .rect-1 {

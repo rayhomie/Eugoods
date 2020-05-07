@@ -25,6 +25,6 @@
 .rect{
   font-size: 14pt;
   writing-mode:sideways-rl;
-  color: #4b9cdb;
+  color:rgba(176, 213, 223, 1);
 }
 

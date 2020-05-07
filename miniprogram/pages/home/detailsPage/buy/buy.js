@@ -131,6 +131,9 @@ Page({
     })
 
   }else{
+    this.setData({
+      loadingshow:false
+    })
     wx.showToast({
       title:'必填一项',
       icon:'none',

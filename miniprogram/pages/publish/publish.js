@@ -33,9 +33,7 @@ Page({
   //发布处理
   handlePublish() {
     //图片上传
-    this.setData({
-      loadingshow:true
-    })
+  
       const imagePath=[]
       const good_name =this.data.publishInfo.otherSub.good_name
       const good_price =parseFloat(this.data.publishInfo.otherSub.good_price)
@@ -63,7 +61,9 @@ Page({
        !(this.data.publishInfo.otherSub.good_phone1 ===''&&
        this.data.publishInfo.otherSub.good_phone2 ==='' &&
        this.data.publishInfo.otherSub.good_phone3 ==='')  ){
-
+        this.setData({
+          loadingshow:true
+        })
 //消息推送发布     
 const openid=App.globalData.openid
 wx.requestSubscribeMessage({
@@ -136,7 +136,7 @@ wx.requestSubscribeMessage({
     else{
       wx.showToast({
         title:'发布信息不完整，请重试',
-        icon:'loading'
+        icon:'none'
       })
     }
   },

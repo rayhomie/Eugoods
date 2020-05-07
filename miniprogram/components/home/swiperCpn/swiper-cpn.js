@@ -14,15 +14,15 @@ Component({
     list:[
       {
         title:"pic1",
-        imagePath:"../../../assets/img/swiper-pic/1.png"
+        imagePath:"cloud://rayhomie.7261-rayhomie-1301936252/1.png"
       },
       {
         title:"pic2",
-        imagePath:"../../../assets/img/swiper-pic/2.png"
+        imagePath:"cloud://rayhomie.7261-rayhomie-1301936252/2.png"
       },
       {
         title:"pic3",
-        imagePath:"../../../assets/img/swiper-pic/3.png"
+        imagePath:"cloud://rayhomie.7261-rayhomie-1301936252/3.png"
       }
     ]
   },

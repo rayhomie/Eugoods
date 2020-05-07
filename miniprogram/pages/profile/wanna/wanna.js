@@ -18,6 +18,9 @@ wx.navigateTo({
    //动态收藏
    zan: function (e) {
     const vm = this;
+    vm.setData({
+      loadingshow:true
+    })
    //console.log(e.currentTarget.dataset)
     const _index = e.currentTarget.dataset.index;
     let _msg = [...vm.data.starGoods]; // msg的引用
@@ -79,8 +82,8 @@ wx.navigateTo({
           wx.cloud.callFunction({
             name:'queryStar',
             success:(res)=>{
-              console.log(res)
-              console.log(res.result.list)
+              //console.log(res)
+              //console.log(res.result.list)
               for(var i=0;i<res.result.list.length;i++){
                 if(res.result.list[i]._openid==App.globalData.openid){
                   this.setData({
@@ -102,9 +105,12 @@ wx.navigateTo({
                 })
                // console.log(this.data.starGoods)
               }
+              vm.setData({
+                loadingshow:false
+              })
             },
             fail:res=>{
-              console.log(res)
+              //console.log(res)
             }
             
           })
