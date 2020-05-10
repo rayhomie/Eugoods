@@ -28,8 +28,6 @@ image{
   height: 40rpx;
 }
 
-
-
 .box {
   width: 280px;
   padding: 40px;

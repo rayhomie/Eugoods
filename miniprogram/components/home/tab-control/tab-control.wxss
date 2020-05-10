@@ -1,18 +1,26 @@
 /* components/home/tab-control/tab-control.wxss */
 .tab-control{
+  position: relative;
   display: flex;
-  height: 88rpx;
+  flex-direction: column;
+  width: 120rpx;
+  height: calc(100vh);
   line-height:88rpx;
+  background: rgb(247, 248, 250); 
   color: rgba(176,213,223,1);
 }
 .tab-item{
   flex: 1;
+  font-size:14pt;
+  margin: 0;
   text-align: center;
+  writing-mode:vertical-rl;
 }
 .active{
   color: #66c18c; 
 }
 .active .text1{
-  padding: 20rpx 10rpx;
-  border-bottom: 5rpx solid #66c18c;
+  padding: 20rpx 15rpx;
+  
+  border-right: 5rpx solid #66c18c;
 }

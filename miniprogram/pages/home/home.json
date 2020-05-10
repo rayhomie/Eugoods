@@ -3,7 +3,10 @@
     "tab-control":"../../components/home/tab-control/tab-control",
     "swiper-cpn":"../../components/home/swiperCpn/swiper-cpn",
     "goods":"../../components/home/goods/goods",
-    "loading-cpn":"../../components/loading/loading-cpn"
+    "loading-cpn":"../../components/loading/loading-cpn",
+      "van-popup": "../../miniprogram_npm/vant-weapp/popup/index",
+      "van-image": "../../miniprogram_npm/vant-weapp/image/index"
+    
   },
   "enablePullDownRefresh":true
 }

@@ -1,7 +1,11 @@
 // miniprogram/pages/home/home.js
 Page({
   //分类控制器
-  tabControlClick(event){
+  tabControlClick(event){ 
+    this.data.popup = false
+    this.setData({
+      popup: this.data.popup
+    })
    // console.log(event.detail)
     if(event.detail.index==2){
       this.setData({
@@ -866,6 +870,7 @@ Page({
         icon:'none'
       })
     }
+    
   },
    zan1: function (e) {
      if(App.globalData!=undefined){
@@ -917,6 +922,23 @@ Page({
       }
     })
    },
+   // 打开popup
+  openPopup(event) {
+   // console.log(event)
+    this.data.popup = true
+    this.setData({
+      popup: this.data.popup
+    })
+  },
+  // 关闭popup
+  closePopup() {
+    this.data.popup = false
+    this.setData({
+      popup: this.data.popup
+    })
+  },
+
+   
   /**
    * 页面的初始数据
    */
@@ -925,7 +947,9 @@ Page({
     displayLeft:[],//goods里面有show：flase
     displayRight:[],//goods里面有show：flase
     star_list:[],
-    loadingshow:true
+    loadingshow:true,
+    popup: false
+  
   },
 
   /**
@@ -1058,7 +1082,6 @@ Page({
    */
   onReady: function () {
     this.animation = wx.createAnimation()
-   
   },
 
   /**

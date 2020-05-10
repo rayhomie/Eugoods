@@ -30,6 +30,7 @@ Component({
       })
       this.triggerEvent('itemClick',{index,titles:this.properties.titles[index]})
     }
+  
    
 
   }

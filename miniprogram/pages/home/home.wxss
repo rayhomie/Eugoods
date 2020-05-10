@@ -49,6 +49,17 @@ swiper-cpn{
   transition-duration:500ms;
   transition-timing-function:ease;
 }
+.all{
+position: relative;
+}
+.btn{
+  position: fixed;
+  top: 0;
+  left: 0rpx;
+   transform: rotate(90deg);
+   z-index: 2;
+}
+
 /* .star:active{
   animation-duration:500ms;
   animation-name:xx;

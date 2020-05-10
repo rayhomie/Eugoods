@@ -11,10 +11,7 @@ App({
          env: 'rayhomie',
         traceUser: true,
       })
-     
-     
 
   },
-  globalData:{
-  }
+  globalData:{}
 })
