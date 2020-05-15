@@ -139,6 +139,13 @@
 					"id": -1,
 					"name": "pages/loadinghome/loadinghome",
 					"pathName": "pages/loadinghome/loadinghome",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/profile/customerService/customerService",
+					"pathName": "pages/profile/customerService/customerService",
 					"scene": null
 				}
 			]

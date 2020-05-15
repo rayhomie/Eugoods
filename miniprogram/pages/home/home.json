@@ -5,7 +5,8 @@
     "goods":"../../components/home/goods/goods",
     "loading-cpn":"../../components/loading/loading-cpn",
       "van-popup": "../../miniprogram_npm/vant-weapp/popup/index",
-      "van-image": "../../miniprogram_npm/vant-weapp/image/index"
+      "van-image": "../../miniprogram_npm/vant-weapp/image/index",
+      "van-search": "../../miniprogram_npm/vant-weapp/search/index"
     
   },
   "enablePullDownRefresh":true

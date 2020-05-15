@@ -3,7 +3,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 120rpx;
+  width: 90rpx;
   height: calc(100vh);
   line-height:88rpx;
   background: rgb(247, 248, 250); 
@@ -20,7 +20,7 @@
   color: #66c18c; 
 }
 .active .text1{
-  padding: 20rpx 15rpx;
+  padding: 20rpx 20rpx;
   
-  border-right: 5rpx solid #66c18c;
+  border-left: 10rpx solid #66c18c;
 }

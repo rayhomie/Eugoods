@@ -60,8 +60,8 @@ Page({
           loadingshow:false
         })
         //console.log(this.data.goods)
-       // console.log(this.data.displayLeft)
-        //console.log(this.data.displayRight)
+        console.log(this.data.displayLeft)
+        console.log(this.data.displayRight)
   
          //查询收藏状态左
        wx.cloud.callFunction({
@@ -791,7 +791,7 @@ Page({
                                  }    
                                }
                              }
-                             //console.log(this.data.displayLeft)
+                            //console.log(this.data.displayLeft)
                        }
                      })
                    }
@@ -927,8 +927,10 @@ Page({
    // console.log(event)
     this.data.popup = true
     this.setData({
-      popup: this.data.popup
+      popup: this.data.popup,
+      guide:''
     })
+     
   },
   // 关闭popup
   closePopup() {
@@ -937,7 +939,262 @@ Page({
       popup: this.data.popup
     })
   },
+  onPageScroll(e) {
+    this.setData({
+      guide:''
+    })
+    this.data.location.push(e.scrollTop)
+    this.data.location.shift()
+    //console.log(this.data.location)
+     let relativeLocation=this.data.location[0]-this.data.location[1]
+    //console.log(relativeLocation)
+    if (relativeLocation<=-10) {
+      this.setData({
+        showSearch: false
+      })
+    } else if(relativeLocation>3) {
+      this.setData({
+        showSearch: true
+      })
+    }
+  },
+  onSearch(e){
+    this.setData({
+      search:e.detail
+    })
+    if(this.data.search!=''){
+    this.setData({
+      loadingshow:true
+    })
+    wx.cloud.callFunction({
+      name:'search',
+      data:{
+        search:this.data.search
+      }
+    }).then(res=>{
+      //console.log(res.result.list)
+        
+       // console.log(res)
+       this.setData({
+         goods:res.result.list
+       })
+     // console.log(this.data.goods)
+      this.setData({
+        displayLeft:[],
+        displayRight:[]
+      })
+     //变量goods对象获取index值
+     for(var i=0;i<this.data.goods.length;i++){       
+      if(i%2==0){
+       this.setData({
+         displayLeft:this.data.displayLeft.concat(this.data.goods[i]),
+       })
+      }else{
+       this.setData({
+         displayRight:this.data.displayRight.concat(this.data.goods[i]),       
+       })
+      }
+     }
+     //注入show;false
+     for(var i=0;i<this.data.displayLeft.length;i++){  
+       this.data.displayLeft[i].show=false
+       this.setData({
+         displayLeft:this.data.displayLeft
+       })
+     }//注入show;false
+     for(var i=0;i<this.data.displayRight.length;i++){  
+       this.data.displayRight[i].show=false
+       this.setData({
+         displayRight:this.data.displayRight
+       })
 
+
+     }
+     wx.cloud.callFunction({
+      name:'queryStar',
+      success:res=>{
+       // console.log(res.result.list)
+        const list=res.result.list
+        wx.cloud.callFunction({
+          name:"getOpenid",
+          success:res=>{
+            //console.log(res.result.openid)
+            for(var i=0;i<list.length;i++){
+              if(res.result.openid==list[i]._openid){
+                this.setData({
+                  star_list:list[i].goods_list
+                })}}
+               // console.log(this.data.star_list)
+                for(var a=0;a<this.data.star_list.length;a++){
+                  for(var b=0;b<this.data.displayLeft.length;b++){
+                    if(this.data.star_list[a]._id==this.data.displayLeft[b]._id){
+                      this.data.displayLeft[b].show=true
+                      this.setData({
+                        displayLeft:this.data.displayLeft
+                      })
+                    }    
+                  }
+                }
+                //console.log(this.data.displayLeft)
+          }
+        })
+        //查询收藏状态右
+     wx.cloud.callFunction({
+      name:'queryStar',
+      success:res=>{
+       // console.log(res.result.list)
+        const list=res.result.list
+        wx.cloud.callFunction({
+          name:"getOpenid",
+          success:res=>{
+            this.setData({
+              loadingshow:false
+            })
+            //console.log(res.result.openid)
+            for(var i=0;i<list.length;i++){
+              if(res.result.openid==list[i]._openid){
+                this.setData({
+                  star_list:list[i].goods_list
+                })}}
+              // console.log(this.data.star_list)
+                for(var a=0;a<this.data.star_list.length;a++){
+                  for(var b=0;b<this.data.displayRight.length;b++){
+                    if(this.data.star_list[a]._id==this.data.displayRight[b]._id){
+                      this.data.displayRight[b].show=true
+                      this.setData({
+                        displayRight:this.data.displayRight
+                      })
+                    }    
+                  }
+                }
+                //console.log(this.data.displayLeft)
+          }
+        })
+      }
+     })
+
+
+
+      }
+     })
+     
+ 
+    
+      
+    })}else{
+      wx.cloud.callFunction({
+        name:"getGoodsBySchool",
+        data:{
+          school_name:'西南石油大学'
+        },
+        complete: res => {
+         this.setData({
+           loadingshow:false
+         })
+         // console.log( res)
+         this.setData({
+           goods:res.result.list
+         })
+       // console.log(this.data.goods)
+       //变量goods对象获取index值
+       for(var i=0;i<this.data.goods.length;i++){       
+        if(i%2==0){
+         this.setData({
+           displayLeft:this.data.displayLeft.concat(this.data.goods[i]),
+         })
+        }else{
+         this.setData({
+           displayRight:this.data.displayRight.concat(this.data.goods[i]),       
+         })
+        }
+       }
+       //注入show;false
+       for(var i=0;i<this.data.displayLeft.length;i++){  
+         this.data.displayLeft[i].show=false
+         this.setData({
+           displayLeft:this.data.displayLeft
+         })
+         //console.log(this.data.displayLeft)
+       }//注入show;false
+       for(var i=0;i<this.data.displayRight.length;i++){  
+         this.data.displayRight[i].show=false
+         this.setData({
+           displayRight:this.data.displayRight
+         })
+       }
+       //console.log(this.data.goods)
+      // console.log(this.data.displayLeft)
+       //console.log(this.data.displayRight)
+ 
+        //查询收藏状态左
+      wx.cloud.callFunction({
+       name:'queryStar',
+       success:res=>{
+        // console.log(res.result.list)
+         const list=res.result.list
+         wx.cloud.callFunction({
+           name:"getOpenid",
+           success:res=>{
+             //console.log(res.result.openid)
+             for(var i=0;i<list.length;i++){
+               if(res.result.openid==list[i]._openid){
+                 this.setData({
+                   star_list:list[i].goods_list
+                 })}}
+                // console.log(this.data.star_list)
+                 for(var a=0;a<this.data.star_list.length;a++){
+                   for(var b=0;b<this.data.displayLeft.length;b++){
+                     if(this.data.star_list[a]._id==this.data.displayLeft[b]._id){
+                       this.data.displayLeft[b].show=true
+                       this.setData({
+                         displayLeft:this.data.displayLeft
+                       })
+                     }    
+                   }
+                 }
+                 //console.log(this.data.displayLeft)
+           }
+         })
+       }
+      })
+      //查询收藏状态右
+      wx.cloud.callFunction({
+       name:'queryStar',
+       success:res=>{
+        // console.log(res.result.list)
+         const list=res.result.list
+         wx.cloud.callFunction({
+           name:"getOpenid",
+           success:res=>{
+             //console.log(res.result.openid)
+             for(var i=0;i<list.length;i++){
+               if(res.result.openid==list[i]._openid){
+                 this.setData({
+                   star_list:list[i].goods_list
+                 })}}
+               // console.log(this.data.star_list)
+                 for(var a=0;a<this.data.star_list.length;a++){
+                   for(var b=0;b<this.data.displayRight.length;b++){
+                     if(this.data.star_list[a]._id==this.data.displayRight[b]._id){
+                       this.data.displayRight[b].show=true
+                       this.setData({
+                         displayRight:this.data.displayRight
+                       })
+                     }    
+                   }
+                 }
+                 //console.log(this.data.displayLeft)
+           }
+         })
+       }
+      })
+ 
+ 
+ 
+      }
+      })
+    }
+  },
    
   /**
    * 页面的初始数据
@@ -948,17 +1205,18 @@ Page({
     displayRight:[],//goods里面有show：flase
     star_list:[],
     loadingshow:true,
-    popup: false
-  
+    popup: false,
+    location: [0, 0],
+    showSearch: true,
+    search:'',
+    guide:''
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
- 
-
-    
 
      wx.cloud.callFunction({
        name:"getGoodsBySchool",
@@ -1071,7 +1329,12 @@ Page({
 
      }
      })
-     
+     if(App.globalData==undefined){
+      this.setData({
+        guide:'guide'
+      })
+     }
+
     
     
 

@@ -1,21 +1,12 @@
 <!--miniprogram/pages/home/home.wxml-->
-<!-- <view>
-<navigator url="../home/search/search">请输入搜索关键词</navigator>
-</view> -->
 <view class="all">
 <swiper-cpn></swiper-cpn>
-<van-image class="btn" width="3rem" height="3rem" src="../../../assets/img/addPicBtn/btn.png" bind:click="openPopup" />
-<van-popup show="{{ popup }}" position="left" custom-style="height: 100%;" bind:close="closePopup" overlay="false">
+<van-image class="btn {{guide}}" width="3rem" height="3rem" src="../../../assets/img/addPicBtn/btn.png" bind:click="openPopup" />
+<van-popup show="{{ popup }}" position="right" custom-style="height: 100%;" bind:close="closePopup" overlay="false">
 <tab-control class="tab-control" titles="{{['全部','书籍','服装','饰品','食品','数码','其他']}}"
 bind:itemClick="tabControlClick" />
 </van-popup>
 
-
-<!-- 
-<view class="displaySelect">
-<button>最近发布</button>
-<button>可能喜欢</button>
-</view> -->
 
 <view class="displayAll">
 
@@ -59,3 +50,8 @@ data-goodId="{{item._id}}" lazy-load="{{true}}" hidden='{{item.show}}' data-inde
 
 <loading-cpn wx:if="{{loadingshow}}"></loading-cpn>
 </view>
+<!-- 搜索 -->
+	<view style="position:fixed; bottom:0;width: 750rpx; z-index: 1;" cursor-spacing="100rpx" wx:if="{{showSearch}}" >
+		<van-search value="{{ search }}" placeholder="请输入搜索关键词" bind:search="onSearch" background="transparent" />
+	</view>
+	

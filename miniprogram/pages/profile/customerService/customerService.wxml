@@ -1,2 +1,68 @@
 <!--miniprogram/pages/profile/customerService/customerService.wxml-->
-<text>miniprogram/pages/profile/customerService/customerService.wxml</text>
+<view class="all">
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 14pt;">
+  西柚美物
+</van-divider>
+
+<view>"西柚美物"是针对校园......哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或
+或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或
+</view>
+
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 14pt;">
+  "首页"
+</van-divider>
+
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 10pt;" dashed>
+  ①
+</van-divider>
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 10pt;" dashed>
+  ②
+</van-divider>
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 10pt;" dashed>
+  ③
+</van-divider>
+
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 14pt;">
+  "发布"
+</van-divider>
+
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 10pt;" dashed>
+  ①
+</van-divider>
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 10pt;" dashed>
+  ②
+</van-divider>
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 10pt;" dashed>
+  ③
+</van-divider>
+
+
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 14pt;">
+  "我的"
+</van-divider>
+
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 10pt;" dashed>
+  ①
+</van-divider>
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 10pt;" dashed>
+  ②
+</van-divider>
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 10pt;" dashed>
+  ③
+</van-divider>
+
+</view>
+

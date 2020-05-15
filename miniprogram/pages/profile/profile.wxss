@@ -113,4 +113,125 @@ page{
   z-index: -1;
 }
 
+.middle{
+  position: absolute;
+  top:20%;
+  left: 0;
+  transition: translate(-50%,-50%);
+  width: 100%;
+}
 
+.btn{
+ 
+position: relative;
+display: block;
+font-size: 12pt;
+font-weight: 400;
+color: #808080;
+font-family: "montserrat";
+text-decoration: none;
+background: rgba(176, 213, 223, 0.2);
+margin: 2rpx 0;
+border: 0rpx solid rgba(176, 213, 223, 0.7);
+padding: 40rpx 250rpx;
+overflow: hidden;
+transition: 0.5s all ease;
+/* box-shadow: 0px -5rpx 3px 0px rgba(176, 213, 223, 0.7) inset; */
+border-radius: 10rpx;
+
+}
+
+.btn1 .img{
+  position: absolute;
+  left: 22%;
+  top: 26%;
+  width: 60rpx;
+  height: 60rpx;
+}
+.btn1 .next{
+  position: absolute;
+  right: 4%;
+  top: 30%;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+.btn2{
+ 
+  position: relative;
+  display: block;
+  font-size: 12pt;
+  font-weight: 400;
+  color: #808080;
+  font-family: "montserrat";
+  text-decoration: none;
+  background: rgba(176, 213, 223, 0.2);
+  margin: 25rpx 0;
+  border: 0rpx solid rgba(176, 213, 223, 0.7);
+  padding: 40rpx 250rpx;
+  overflow: hidden;
+  transition: 0.5s all ease;
+  /* box-shadow: 0px -5rpx 3px 0px rgba(176, 213, 223, 0.7) inset; */
+  border-radius: 10rpx;
+  
+  }
+
+.num{
+
+  
+  position: relative;
+  display: block;
+  font-size: 12pt;
+  font-weight: 400;
+  color: #808080;
+  font-family: "montserrat";
+  text-decoration: none;
+  background: rgba(176, 213, 223, 0.2);
+  margin: 25rpx 0;
+  border: 0rpx solid rgba(176, 213, 223, 0.7);
+  padding: 30rpx 250rpx;
+  overflow: hidden;
+  transition: 0.5s all ease;
+  /* box-shadow: 0px -5rpx 3px 0px rgba(176, 213, 223, 0.7) inset; */
+  border-radius: 10rpx;
+}
+.con{
+  position: relative;
+  display: block;
+  font-size: 12pt;
+  font-weight: 400;
+  color: #808080;
+  font-family: "montserrat";
+
+  background: rgba(176, 213, 223, 0.2);
+  margin: 25rpx 0;
+  border: 0rpx solid rgba(176, 213, 223, 0.7);
+  padding: 40rpx;
+  overflow: hidden;
+  transition: 0.5s all ease;
+  /* box-shadow: 0px -5rpx 3px 0px rgba(176, 213, 223, 0.7) inset; */
+  border-radius: 10rpx;
+}
+.nick{
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius:50rpx ;
+}
+.logo{
+  position: absolute;
+  top: 7%;
+  left: 14%;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius:50rpx ;
+}
+.guide_login{
+  width: 500rpx;
+  margin: auto;
+  border-radius: 250rpx;
+  box-shadow: 0 0 0 9999px rgba(0,0, 0, 0.75);
+}

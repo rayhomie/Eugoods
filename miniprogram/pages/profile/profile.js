@@ -1,10 +1,11 @@
 // miniprogram/pages/profile/profile.js
 Page({
-  serveltUpdateInfoPage(){
-    wx.navigateTo({
-      url:'../profile/updateSchoolName/updateSchoolName'
-    })
-  },
+  // serveltUpdateInfoPage(){
+  //   wx.navigateTo({
+  //     url:'../profile/updateSchoolName/updateSchoolName'
+  //   })
+  // },
+  //获取用户的信息
     getUserInfo:function(e){
       //console.log(this.data.userInfo)
       //console.log(App.globalData)
@@ -12,7 +13,8 @@ Page({
       if(e.detail.errMsg=="getUserInfo:ok"){
       this.setData({
         userInfo:e.detail.userInfo,
-        hasUserInfo:true
+        hasUserInfo:true,
+        guide_login:''
       })
       //console.log(this.data.userInfo)
       if(e.detail.userInfo.gender===1){
@@ -67,6 +69,10 @@ Page({
           
          },2000)
          
+      }else{
+        this.setData({
+          guide_login:''
+        })
       }
     },
     //云调用getOpenid
@@ -87,31 +93,43 @@ Page({
     },
  
   //选择学校的按钮和组件显示
-  selectSchool(){
-    this.setData({
-      showSelectBtn:false,
-      showSelectSchool:true
-    })
-  },
-  decide(e){
-    //console.log(e.detail)
-    this.setData({
-      school:e.detail.school,
-      showSelectSchool:e.detail.showSelectSchool
-    })
-    //将学校信息导入userinfo
-      this.data.userInfo.school=this.data.school
-      this.setData({
-        userInfo:this.data.userInfo,
-        isshowUpdateSchool:true
-      })
-      App.globalData=this.data.userInfo
-      //console.log(App.globalData)
-     //console.log(this.data.userInfo)
-    //console.log(this.data.school)
+  // selectSchool(){
+  //   this.setData({
+  //     showSelectBtn:false,
+  //     showSelectSchool:true
+  //   })
+  // },
+  // decide(e){
+  //   //console.log(e.detail)
+  //   this.setData({
+  //     school:e.detail.school,
+  //     showSelectSchool:e.detail.showSelectSchool
+  //   })
+  //   //将学校信息导入userinfo
+  //     this.data.userInfo.school=this.data.school
+  //     this.setData({
+  //       userInfo:this.data.userInfo,
+  //       isshowUpdateSchool:true
+  //     })
+  //     App.globalData=this.data.userInfo
+  //     //console.log(App.globalData)
+  //    //console.log(this.data.userInfo)
+  //   //console.log(this.data.school)
    
+  // },
+  
+  //关于我们，弹窗状态管理
+  aboutOpen(){
+    this.setData({
+      about:true
+    })
   },
-
+  //关于我们，弹窗状态管理
+  aboutClose(){
+    this.setData({
+      about:false
+    })
+  },
  
    /**
    * 页面的初始数据
@@ -127,14 +145,17 @@ Page({
     openid:{},
     isshowUpdateSchool:false,
     isFirstLogin:[],//唯一插入用户信息
-    loadingshow:true
+    loadingshow:true,
+    about:false,
+    guide_login:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
- 
+    
+    //判断是否获取授权，是否第一次登陆
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
@@ -172,11 +193,11 @@ Page({
                })
          App.globalData=this.data.userInfo
                 setTimeout(()=>{
-                  wx.showToast({
-                    title:'自动登录成功',
-                    icon:'none',
-                    mask:'true'
-                  })
+                  // wx.showToast({
+                  //   title:'自动登录成功',
+                  //   icon:'none',
+                  //   mask:'true'
+                  // })
                   this.setData({
                     isshowUpdateSchool:true
                   })
@@ -195,7 +216,11 @@ Page({
         }
       }
     })
-
+    if(App.globalData==undefined){
+      this.setData({
+        guide_login:'guide_login'
+      })
+     }
 
 
     

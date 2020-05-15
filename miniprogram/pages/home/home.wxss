@@ -12,7 +12,9 @@ swiper-cpn{
   height: 300rpx;
 }
 
+.displayAll{
 
+}
 .goodsDisplayLeft{
   display: flex;
   flex-direction:column;
@@ -55,10 +57,19 @@ position: relative;
 .btn{
   position: fixed;
   top: 0;
-  left: 0rpx;
+  right: 0;
    transform: rotate(90deg);
    z-index: 2;
 }
+.guide{
+  width: 3rem;
+  height: 3rem;
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 0 9999px rgba(0,0, 0, 0.75);
+}
+
+
 
 /* .star:active{
   animation-duration:500ms;
