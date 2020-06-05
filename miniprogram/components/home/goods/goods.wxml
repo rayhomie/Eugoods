@@ -1,0 +1,7 @@
+<!--components/home/goods/goods.wxml-->
+<view class="goods">
+<view class="goods-image"><slot name="goods-image"></slot></view>
+<view class="goods-name"><slot name="goods-name"></slot></view>
+<view class="goods-price"><slot name="goods-price"></slot></view>
+<view class="goods-headPic"><slot name="goods-headPic"></slot></view>
+</view>

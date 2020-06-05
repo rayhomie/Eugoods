@@ -1,0 +1,100 @@
+/* miniprogram/pages/profile/issue/detailsPage/detailsPage.wxss */
+.detailsAll{
+  position: relative;
+  color:rgba(53,53,53,0.645);
+  font-size: 14pt;
+}
+.buy{
+  position: absolute;
+  left: 550rpx;
+  top: 50rpx;
+}
+.lianxi{
+  position: fixed;
+  box-sizing: border-box;
+  width:750rpx;
+  height:140rpx ;
+  background-color:#f1f2f6;
+}
+.star{
+  position: fixed;
+  right: 10rpx;
+  top: 15rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.star:active{
+  width:110rpx;
+  height:110rpx;
+  transition-duration:500ms;
+  transition-timing-function:ease;
+}
+/* .fabu{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid rgba(46, 204, 112, 0.571);
+  padding: 14px 40px;
+  outline: none;
+  color: rgb(128, 128, 128);
+  border-radius: 24px;
+  transition: 0.25s;
+} */
+.liaotian:hover{
+  background: rgba(46, 204, 112, 0.171);
+}
+.liaotian{
+  position: fixed;
+  left: 450rpx;
+  top: 30rpx;
+  color:rgba(53, 53, 53, 0.645);
+  font-size: 14pt;
+  border: 2px solid #b0d5df;
+  border-radius: 48rpx;
+}
+.headPic{
+  position: fixed;
+  left: 20rpx;
+  top: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+.nickName{
+position: fixed;
+left: 140rpx;
+top: 40rpx;
+}
+.goodname{
+position: absolute;
+top: 50rpx;
+left: 40rpx;
+}
+.goodcategory{
+  position: absolute;
+  top: 100rpx;
+  left: 40rpx;
+}
+.goodprice{
+position: absolute;
+top: 150rpx;
+left: 40rpx;
+}
+.gooddescribe{
+width:90vw;
+position: absolute;
+top: 200rpx;
+left: 40rpx;
+}
+.goodPic{
+  transform: translateX(5%) translateY(60rpx);
+  z-index: -1;
+
+}
+.goodstatus{
+  position: absolute;
+  top: 100rpx;
+  left: 40rpx;
+}

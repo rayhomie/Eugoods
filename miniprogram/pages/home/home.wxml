@@ -1,0 +1,74 @@
+<!--miniprogram/pages/home/home.wxml-->
+<view class="all">
+<swiper-cpn></swiper-cpn>
+<van-image class="btn {{guide}}" width="3rem" height="3rem" src="../../../assets/img/addPicBtn/btn.png" bind:click="openPopup" />
+<van-popup show="{{ popup }}" position="right" custom-style="height: 100%;" bind:close="closePopup" overlay="false">
+<tab-control class="tab-control" titles="{{['全部','书籍','服装','饰品','食品','数码','其他']}}"
+bind:itemClick="tabControlClick" />
+</van-popup>
+
+
+<view class="displayAll">
+
+<view class="goodsDisplayLeft">
+<block wx:for="{{displayLeft}}" wx:key="index">
+<goods class="goods-item" catchtap="detailsPage" data-goodid="{{item._id}}" data-publisherinfo="{{item}}" >
+<image class="img" slot="goods-image" src="{{item.goods_image[0]}}" lazy-load mode="widthFix"/>
+<view slot="goods-name">{{item.goods_name}}</view>
+<view slot="goods-price" class="goods-price"><view class="price">￥{{item.goods_price}}</view>
+<image src="../../assets/img/star/collection.png"  class="star" catchtap="zan1" 
+data-goodId="{{item._id}}"  lazy-load="{{true}}" hidden='{{item.show}}' data-index="{{index}}"></image>
+ <image src="../../assets/img/star/collection1.png"  class='star' catchtap="zan1" 
+ data-goodId="{{item._id}}" lazy-load="{{true}}" hidden='{{!item.show}}' data-index="{{index}}"></image>
+</view>
+<view slot="goods-headPic" class="headPicview"> <image class="headPic" src="{{item.avatarUrl}}"></image>
+<view class="nickName">{{item.nickName}}</view>
+</view>
+</goods>
+</block>
+</view>
+<view class="goodsDisplayRight">
+<block wx:for="{{displayRight}}" wx:key="index">
+<goods class="goods-item" catchtap="detailsPage" data-goodid="{{item._id}}" data-publisherinfo="{{item}}">
+<image class="img" slot="goods-image" src="{{item.goods_image[0]}}" lazy-load mode="widthFix"/>
+<view slot="goods-name">{{item.goods_name}}</view>
+<view slot="goods-price" class="goods-price">￥{{item.goods_price}}
+<image src="../../assets/img/star/collection.png" class='star' catchtap="zan" 
+data-goodId="{{item._id}}" lazy-load="{{true}}" hidden='{{item.show}}' data-index="{{index}}" ></image>
+ <image src="../../assets/img/star/collection1.png"  class='star' catchtap="zan" 
+ data-goodId="{{item._id}}" lazy-load="{{true}}"
+ data-index="{{index}}" hidden='{{!item.show}}' ></image>
+ </view>
+ <view slot="goods-headPic" class="headPicview"> <image class="headPic" src="{{item.avatarUrl}}"></image>
+<view class="nickName">{{item.nickName}}</view>
+</view>
+</goods>
+</block>
+</view>
+</view>
+
+
+<loading-cpn wx:if="{{loadingshow}}"></loading-cpn>
+</view>
+<!-- 搜索 -->
+	<van-transition show="{{ showSearch }}" custom-class="block">
+		<view style="position:fixed; bottom:0;width: 750rpx; z-index: 1 " cursor-spacing="100rpx">
+			<van-search  bind:search="onSearch" background="transparent" />
+		</view>
+	</van-transition>
+
+<!-- 引导说明 -->
+	<view>
+		<van-overlay show="{{ instruction }}"  style="z-index: 10">
+			<swiper class="firstl" indicator-dots>
+				<block wx:for="{{activity}}" wx:key="index">
+					<swiper-item>
+						<image src="{{item.imagePath}}" class="activityImg" mode="scaleToFill" bindtouchstart="closeGuide1" bindtouchend="closeGuide" data-title="{{index}}"></image>
+					</swiper-item>
+				</block>
+			</swiper>
+		</van-overlay>
+	</view>
+	<!-- 指导按钮 -->
+	<image class="btn4" hidden="{{btnShow}}" src="cloud://rayhomie.7261-rayhomie-1301936252/11.PNG"></image>
+	<image class="btn5" hidden="{{btnShow}}" src="cloud://rayhomie.7261-rayhomie-1301936252/14.PNG"></image>

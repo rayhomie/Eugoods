@@ -1,0 +1,18 @@
+/* miniprogram/pages/profile/customerService/customerService.wxss */
+.all{
+  margin: 2%;
+  margin-bottom: 0rpx;
+  background: rgb(246,247,245);
+   border: 2rpx solid rgba(80, 80, 80, 0.104); 
+  box-shadow: 0rpx 2rpx 2rpx rgba(80, 80, 80, 0.275);
+}
+.p7{
+  transform: translateX(6%);
+  border-radius: 10rpx;
+  width: 85vw;
+}
+.p8{
+  width: 83rpx;
+  height: 86rpx;
+  transform: translateX(15rpx);
+}

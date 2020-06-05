@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "tab-control":"../../components/home/tab-control/tab-control",
+    "swiper-cpn":"../../components/home/swiperCpn/swiper-cpn",
+    "goods":"../../components/home/goods/goods",
+    "loading-cpn":"../../components/loading/loading-cpn",
+      "van-popup": "../../miniprogram_npm/vant-weapp/popup/index",
+      "van-image": "../../miniprogram_npm/vant-weapp/image/index",
+      "van-search": "../../miniprogram_npm/vant-weapp/search/index",
+      "van-transition": "../../miniprogram_npm/vant-weapp/transition/index",
+      "van-overlay":"../../miniprogram_npm/vant-weapp/overlay/index",
+      "van-icon":"../../miniprogram_npm/vant-weapp/icon/index"
+    
+  },
+  "enablePullDownRefresh":true
+}

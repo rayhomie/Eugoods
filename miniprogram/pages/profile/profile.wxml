@@ -1,0 +1,74 @@
+<!--miniprogram/pages/profile/profile.wxml-->
+<view class="myInfo">
+<view class="userinfo {{guide_login}}" >
+ <button class="firstlogin" wx:if="{{!hasUserInfo}}" open-type="getUserInfo"
+ bindgetuserinfo="getUserInfo">使用微信授权登录</button>
+ <image bindtap="bindViewTap" class="userinfo-avatar" 
+ src="{{userInfo.avatarUrl}}" mode="cover"></image>
+ <view class="userinfo-nickname">
+ <text class="userinfo-nick">{{userInfo.nickName}}</text>
+ <!-- <text class="userinfo-gender">{{gender}}</text> -->
+ <!-- <text class="userinfo-area">{{area}}</text> -->
+</view>
+</view>
+<!-- <button class="schoolInfo" wx:if="{{isshowUpdateSchool}}" bindtap="serveltUpdateInfoPage" style="width:100%; font-weight:400">修改学校</button> -->
+</view>
+
+
+
+
+<!-- <button class="school" bindtap="selectSchool" style="width:100%; font-weight:400" wx:if="{{showSelectBtn}}">点击选择高校</button>
+
+<my-info bind:decide="decide" wx:if="{{showSelectSchool}}"></my-info> -->
+<view class="middle">
+
+<navigator class="btn2 btn1" url="../profile/issue/issue">我发布的
+<image class="img" src="../../assets/img/profile/instruction.png"></image>
+<image class="next" src="../../assets/img/profile/next.png"></image>
+</navigator>
+<navigator class="btn btn1" url="../profile/sale/sale">我被订的
+<image class="img" src="../../assets/img/profile/phone bill.png"></image>
+<image class="next" src="../../assets/img/profile/next.png"></image>
+</navigator>
+<navigator class="btn btn1" url="../profile/bought/bought">我预订的
+<image class="img" src="../../assets/img/profile/cart.png"></image>
+<image class="next" src="../../assets/img/profile/next.png"></image>
+</navigator>
+<navigator class="btn btn1" url="../profile/wanna/wanna">我想要的
+<image class="img" src="../../assets/img/profile/favoriteslist.png"></image>
+<image class="next" src="../../assets/img/profile/next.png"></image>
+</navigator>
+<navigator class="btn btn1" url="../profile/customerService/customerService">使用指南
+<image class="img" src="../../assets/img/profile/Q&A.png"></image>
+<image class="next" src="../../assets/img/profile/next.png"></image>
+</navigator>
+<navigator class="btn2 btn1" bindtap="aboutOpen">关于我们
+<image class="img" src="../../assets/img/profile/information.png"></image>
+<image class="next" src="../../assets/img/profile/next.png"></image>
+</navigator>
+
+
+</view>
+<!-- <text class="h1">(建议用户发布的好物被预订后，及时下架好物!)</text>
+<text class="h2">Copyright © 2020 by Rayhomie</text>
+<text class="h3">若有问题联系:1572801584@qq.com</text> -->
+<!-- 加载 -->
+<loading-cpn wx:if="{{loadingshow}}"></loading-cpn>
+
+<van-popup show="{{ about }}" position="top" custom-style="height: 72%;" bind:close="aboutClose">
+	<view>
+		<view class="num">团队：RM-F <image class="logo" src="../../assets/img/profile/ours/logo1.png"></image></view>
+			<view style="">
+        <view class="num">高桥靓仔<image class="nick" src="../../assets/img/profile/ours/leihao.jpg"></image></view>
+				<view class="num">二两西北枫<image class="nick" src="../../assets/img/profile/ours/zhousong.jpg"/></view>
+				<view class="num">阿柒<image class="nick" src="../../assets/img/profile/ours/wushuang.jpg"/></view>
+				<view class="num">rm -fr /*<image class="nick" src="../../assets/img/profile/ours/fuyue.jpg"/></view>
+		
+		</view>
+		<view class="con">联系我们：eugoods@qq.com</view>
+	</view>
+</van-popup>
+	<!-- 指导按钮 -->
+	<image class="btn4" hidden="{{btnShow}}" src="cloud://rayhomie.7261-rayhomie-1301936252/12.PNG"></image>
+	<image class="btn3" hidden="{{btnShow}}" src="cloud://rayhomie.7261-rayhomie-1301936252/13.PNG"></image>
+	<image class="btn5" hidden="{{btnShow}}" src="cloud://rayhomie.7261-rayhomie-1301936252/10.PNG"></image>

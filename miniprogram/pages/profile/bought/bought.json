@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "goods-list":"../../../components/profile/goods-list/goods-list",
+    "loading-cpn":"../../../components/loading/loading-cpn"
+  },
+  "navigationBarTitleText":"我预订的"
+}

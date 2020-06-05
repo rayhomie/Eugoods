@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "my-info":"../../components/profile/my-info/my-info",
+    "loading-cpn":"../../components/loading/loading-cpn",
+    "van-popup":"../../miniprogram_npm/vant-weapp/popup/index"
+  },
+  "navigationBarTitleText":"我的"
+}

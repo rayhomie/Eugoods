@@ -1,0 +1,92 @@
+<!--miniprogram/pages/profile/customerService/customerService.wxml-->
+<view class="all">
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 14pt;">
+  西柚美物
+</van-divider>
+
+<view style="padding:30rpx;color:#808080;font-size: 12pt;">"西柚美物"是针对校园打造的一款美物信息分享、线下交易平台。
+</view>
+<image class="p7" src="cloud://rayhomie.7261-rayhomie-1301936252/15.jpg" mode="widthFix"></image>
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 14pt;">
+  "首页"
+</van-divider>
+
+<van-divider
+  contentPosition="left" customStyle=" border-color:#B0D5DF; font-size: 10pt;" dashed>
+  1.所有商品都聚集在这里哦，点击右侧的滑块，可以选择商品类别哦。当向上滑动屏幕浏览时，可以触发搜索框，进行搜索哟！
+</van-divider>
+<van-divider
+  contentPosition="left" customStyle=" border-color:#B0D5DF; font-size: 10pt;" dashed>
+  2.浏览校园好物，收藏心仪的好物。点击进入详情页面，可填写自己联系方式，预订下单。
+</van-divider>
+<van-divider
+  contentPosition="left" customStyle=" border-color:#B0D5DF; font-size: 10pt;" dashed>
+  3.下单成功后，会收到微信“订阅消息”里面包含好物发布者联系方式，也可在【我的】->【我预订的】中查看订购的好物信息，或者取消订单。
+</van-divider>
+
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 14pt;">
+  "发布"
+</van-divider>
+
+<van-divider
+  contentPosition="left" customStyle=" border-color:#B0D5DF; font-size: 10pt;" dashed>
+  1.你想售出、分享的所有宝贝，都可以在发布里完成，记得详细描述你的好物品哦，这样才能给他找个好买家呀。发布成功以后会收到微信“发布成功”的订阅消息。
+</van-divider>
+
+<van-divider
+  contentPosition="left" customStyle=" border-color:#B0D5DF; font-size: 10pt;" dashed>
+  2.当您发布的好物被其他用户下单预订后，您将收到微信的推送，进行线下交易。若您对买家不满意，可以【我的】->【我被订的】中进行取消订单处理。
+</van-divider>
+
+<van-divider
+  contentPosition="left" customStyle=" border-color:#B0D5DF; font-size: 10pt;" dashed>
+  3.建议用户发布的好物被预订并且交易以后主动下架商品，谢谢您的支持。【我的】->【我发布的】进行下架处理。
+</van-divider>
+<image class="p7" src="cloud://rayhomie.7261-rayhomie-1301936252/7.jpg"></image>
+
+
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 14pt;">
+  "我的"
+</van-divider>
+
+<van-divider
+  contentPosition="left" customStyle="border-color:#B0D5DF; font-size: 10pt;" dashed>
+ 【我发布的】您发布的所有好物信息
+</van-divider>
+<van-divider
+  contentPosition="left" customStyle=" border-color:#B0D5DF; font-size: 10pt;" dashed>
+【我被订的】您处于被预订状态的好物信息
+</van-divider>
+<van-divider
+  contentPosition="left" customStyle=" border-color:#B0D5DF; font-size: 10pt;" dashed>
+  【我预订的】您预订了的好物信息
+</van-divider>
+<van-divider
+  contentPosition="left" customStyle=" border-color:#B0D5DF; font-size: 10pt;" dashed>
+  【我想要的】我收藏过得心仪的好物信息
+</van-divider>
+<van-divider
+  contentPosition="left" customStyle=" border-color:#B0D5DF; font-size: 10pt;" dashed>
+  【关于我们】联系我们eugoods@qq.com
+</van-divider>
+
+<van-divider
+  contentPosition="left" customStyle="color: #B0D5DF; border-color:#B0D5DF; font-size: 14pt;">
+  "安全提醒"<image class="p8" src="cloud://rayhomie.7261-rayhomie-1301936252/16.PNG"></image>
+</van-divider>
+
+<van-divider
+  contentPosition="left" customStyle=" border-color:#B0D5DF; font-size: 10pt;" dashed>
+  当你一旦遭遇恶意职业卖家，自己的权益就更加难以保障。请联系我们，官方邮箱：eugoods@qq.com。
+卖方将闲置好物公开挂在平台上的同时，宝贝的信息和卖家的信息会以公开的形式展示在平台上。
+避免各种各样的奇葩买家甚至贩子纷至沓来，给卖家带来很多不必要的麻烦和损失。
+所有在添加联系方式时需谨慎，必要时候，可以联系我们投诉不良用户。
+因为主要是同校交易，但也可能涉及邮寄交易，物流的成本，也是交易双方必须要考虑的，如果邮费已经达到售价的一半甚至更高，
+可以选择就近的买家。注意东西被掉包、暴力快递带来的损失等，所以最好线下见面交易，谢谢您的支持！
+</van-divider>
+</view>
+

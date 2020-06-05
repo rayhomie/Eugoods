@@ -1,0 +1,30 @@
+/* components/publishLogin/publish-login.wxss */
+/* components/loading/loading-cpn.wxss */
+
+/*遮罩*/
+.loader {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  width: 750rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0); /*这里使用rgba是利用了其中的alpha通道设置透明度，这样可以避免子元素的透明度改变*/
+  z-index: 999;
+}
+
+/**第二个Loader的css**/
+.rect-wapper {
+  position: absolute;
+  top: 35%;
+  left: 85%;
+  width: 10rpx;
+}
+
+.rect{
+  font-size: 14pt;
+  writing-mode:sideways-rl;
+  color:rgba(176, 213, 223, 1);
+}
+

@@ -1,0 +1,261 @@
+/* miniprogram/pages/profile/profile.wxss */
+page{
+  background-color: rgb(246,246, 246);
+}
+.firstlogin{
+  position: absolute;
+  top: 2%;
+  left: 25%;
+  font-size: 14pt;
+  width: 10rpx;
+  margin: 10rpx;
+  border: 0;
+  /* background: rgba(52,152,219, 0.171); */
+  color: rgb(128, 128, 128);
+  /* border: 4rpx solid rgba(52,152,219, 0.571); */
+  padding: 10rpx 10rpx;
+  outline: none;
+  border-radius: 100%;
+  transition: 0.25s;
+  text-align: center;
+}
+.myOrder{
+  display: flex;
+}
+.myOrder1{
+  width: 25%;
+  margin: 10rpx;
+  border: 0;
+  background: rgba(52,152,219, 0.071);
+  /* border: 4rpx solid rgba(52,152,219, 0.571); */
+  padding: 10rpx 60rpx;
+  outline: none;
+  border-radius: 20%;
+  transition: 0.25s;
+  text-align: center;
+  font-size: 14pt;
+  font-weight: 400;
+  color: rgba(128, 128, 128,0.5);
+}
+.myOrder1:hover{
+  background: rgba(46, 204, 112, 0.171);
+}
+.schoolInfo:hover{
+  background: rgba(46, 204, 112, 0.171);
+}
+.schoolInfo{
+  font-size: 40rpx;
+  width: 10rpx;
+  margin: 10rpx;
+  border: 0;
+  background: rgba(52,152,219, 0.071);
+  color: rgba(52,152,219, 0.271);
+  letter-spacing:60rpx;
+  /* border: 4rpx solid rgba(52,152,219, 0.571);  */
+  padding: 10rpx 10rpx;
+  outline: none;
+  border-radius: 50rpx;
+  transition: 0.25s;
+  text-align: center;
+}
+.userinfo-nickname{
+  position: relative;
+}
+.userinfo-gender{
+  position: absolute;
+  left: 360rpx;
+}
+.userinfo-area{
+  position: absolute;
+  left: 200rpx;
+}
+.school{
+  font-size: 40rpx;
+  width: 10rpx;
+  margin: 10rpx;
+  border: 0;
+  background: rgba(52,152,219, 0.071);
+  color: rgba(52,152,219, 0.271);
+
+  /* border: 4rpx solid rgba(52,152,219, 0.571);  */
+  padding: 10rpx 10rpx;
+  outline: none;
+  border-radius: 50rpx;
+  transition: 0.25s;
+  text-align: center;
+}
+
+.h1 {
+  color: rgba(128, 128, 128,0.4);
+  font-size: 11pt;
+  text-transform: uppercase;
+  font-weight: 500;
+  position: absolute;
+  top: 90%;
+  left: 10%;
+  z-index: -1;
+}
+.h2 {
+  color: rgba(128, 128, 128,0.3);
+  font-size: 7pt;
+  text-transform: uppercase;
+  font-weight: 500;
+  position: absolute;
+  top: 97%;
+  left:30%;
+  z-index: -1;
+}
+.h3 {
+  color: rgba(128, 128, 128,0.3);
+  font-size: 10pt;
+  text-transform: uppercase;
+  font-weight: 500;
+  position: absolute;
+  top: 94%;
+  left:22%;
+  z-index: -1;
+}
+
+.middle{
+  position: absolute;
+  top:20%;
+  left: 0;
+  transition: translate(-50%,-50%);
+  width: 100%;
+}
+
+.btn{
+ 
+position: relative;
+display: block;
+font-size: 12pt;
+font-weight: 400;
+color: #808080;
+font-family: "montserrat";
+text-decoration: none;
+background: rgba(176, 213, 223, 0.2);
+margin: 2rpx 0;
+border: 0rpx solid rgba(176, 213, 223, 0.7);
+padding: 40rpx 250rpx;
+overflow: hidden;
+transition: 0.5s all ease;
+/* box-shadow: 0px -5rpx 3px 0px rgba(176, 213, 223, 0.7) inset; */
+border-radius: 10rpx;
+
+}
+
+.btn1 .img{
+  position: absolute;
+  left: 22%;
+  top: 26%;
+  width: 60rpx;
+  height: 60rpx;
+}
+.btn1 .next{
+  position: absolute;
+  right: 4%;
+  top: 30%;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+
+.btn2{
+ 
+  position: relative;
+  display: block;
+  font-size: 12pt;
+  font-weight: 400;
+  color: #808080;
+  font-family: "montserrat";
+  text-decoration: none;
+  background: rgba(176, 213, 223, 0.2);
+  margin: 25rpx 0;
+  border: 0rpx solid rgba(176, 213, 223, 0.7);
+  padding: 40rpx 250rpx;
+  overflow: hidden;
+  transition: 0.5s all ease;
+  /* box-shadow: 0px -5rpx 3px 0px rgba(176, 213, 223, 0.7) inset; */
+  border-radius: 10rpx;
+  
+  }
+
+.num{
+
+  
+  position: relative;
+  display: block;
+  font-size: 12pt;
+  font-weight: 400;
+  color: #808080;
+  font-family: "montserrat";
+  text-decoration: none;
+  background: rgba(176, 213, 223, 0.2);
+  margin: 25rpx 0;
+  border: 0rpx solid rgba(176, 213, 223, 0.7);
+  padding: 30rpx 250rpx;
+  overflow: hidden;
+  transition: 0.5s all ease;
+  /* box-shadow: 0px -5rpx 3px 0px rgba(176, 213, 223, 0.7) inset; */
+  border-radius: 10rpx;
+}
+.con{
+  position: relative;
+  display: block;
+  font-size: 12pt;
+  font-weight: 400;
+  color: #808080;
+  font-family: "montserrat";
+
+  background: rgba(176, 213, 223, 0.2);
+  margin: 25rpx 0;
+  border: 0rpx solid rgba(176, 213, 223, 0.7);
+  padding: 40rpx;
+  overflow: hidden;
+  transition: 0.5s all ease;
+  /* box-shadow: 0px -5rpx 3px 0px rgba(176, 213, 223, 0.7) inset; */
+  border-radius: 10rpx;
+}
+.nick{
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius:50rpx ;
+}
+.logo{
+  position: absolute;
+  top: 7%;
+  left: 14%;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius:50rpx ;
+}
+.guide_login{
+  width: 500rpx;
+  margin: auto;
+  border-radius: 250rpx;
+  box-shadow: 0 0 0 9999px rgba(80,80,80, 0.75);
+}
+.btn4{
+  position: absolute;
+  height: 478.4rpx;
+  width: 195.2rpx;
+  top:15% ;
+  right: 40%;
+}
+.btn3{
+  position: absolute;
+  top:40%;
+  right:5%;
+  width: 400rpx;
+  height: 400rpx;
+}
+.btn5{
+  position: absolute;
+  top: 57%;
+  right: 45%;
+  width: 360.5rpx;
+  height: 409rpx;
+}

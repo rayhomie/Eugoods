@@ -1,0 +1,16 @@
+<!--miniprogram/pages/profile/wanna/wanna.wxml-->
+<view class="displayAll">
+<block wx:for="{{starGoods}}" wx:key="index">
+<goods-list class="list" catchtap="detailsPage" data-goodid="{{item._id}}" 
+>
+<image class="image" slot="goods-image" src="{{item.goods_image[0]}}" lazy-load="{{true}}" mode="aspectFill"></image>
+<view class="name" slot="goods-name">{{item.goods_name}}</view>
+<view class="price" slot="goods-price">￥{{item.goods_price}}</view>
+<image class="star" slot="goods-list-star" src="../../../assets/img/star/collection1.png"
+hidden='{{item.show}}' data-index="{{index}}" catchtap="zan" data-goodId="{{item._id}}"></image>
+<image class="star" slot="goods-list-star" src="../../../assets/img/star/collection.png"
+hidden='{{!item.show}}' data-index="{{index}}" catchtap="zan" data-goodId="{{item._id}}"></image>
+</goods-list>
+</block>
+</view>
+<loading-cpn wx:if="{{loadingshow}}"></loading-cpn>

@@ -1,0 +1,37 @@
+/* miniprogram/pages/profile/wanna/wanna.wxss */
+.list{
+  position: relative;
+}
+.image{
+  height: 150rpx;
+  width: 150rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 35rpx;
+  border-radius: 30rpx;
+}
+.name{
+  position: absolute;
+  left: 220rpx;
+  top: 30rpx;
+  width: 400rpx;
+  height: 100rpx;
+}
+.price{
+  position: absolute;
+  left: 180rpx;
+  top: 140rpx;
+}
+.star{
+  position: absolute;
+  top: 50rpx;
+  left: 620rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+/* .star:active{
+  width:110rpx;
+  height:110rpx;
+  transition-duration:500ms;
+  transition-timing-function:ease;
+} */

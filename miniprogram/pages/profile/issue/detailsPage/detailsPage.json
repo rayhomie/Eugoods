@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "loading-cpn":"../../../../components/loading/loading-cpn"
+  },
+  "navigationBarTitleText":"详情"
+}

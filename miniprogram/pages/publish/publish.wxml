@@ -1,0 +1,47 @@
+<!--miniprogram/pages/publish/publish.wxml-->
+<form class="box" bindsubmit="handleSubmit">
+<view>
+<text class="h1">好物名称</text>
+<input class="input" name="good_name" placeholder="name of commodity"></input>
+</view>
+<view>
+<text class="h1">分类</text>
+<radio-group bindchange="checkboxChange">
+     <radio class="radio" wx:for-items="{{category}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}" color="rgba(46, 204, 112, 0.571)">
+     <text>{{item.value}}</text>
+     </radio>
+</radio-group>
+</view>
+<view>
+<text class="h1">价格</text>
+<input class="input" name="good_price" placeholder="price of commodity"></input>
+</view>
+
+<view>
+<text class="h1">详细描述</text>
+<input class="input" name="good_describe" placeholder="give some description"></input>
+</view>
+
+<view>
+<text class="h1">联系方式(必须选填一项)</text>
+<input class="input" name="good_phone1" placeholder="Phone number"></input>
+<input class="input" name="good_phone2" placeholder="Wechat number"></input>
+<input class="input" name="good_phone3" placeholder="QQ number"></input>
+</view>
+
+<view class="h1">上传图片（不超过8张）</view>
+
+<view>
+<view class="picture">
+<view class="pic" wx:for="{{resource}}" wx:key="key">
+<image class="pic1" src="{{item}}" mode="aspectFill"/>
+<image class="cancel" src="../../assets/img/addPicBtn/cancel.png" bindtap="cancel" data-id="{{index}}"/>
+</view>
+<image bindtap="handleUpload" src="../../assets/img/addPicBtn/timg.jpg"></image>
+</view>
+<text class="h2">(建议用户发布的好物被预订后，及时下架好物！)</text>
+<button class="fabu" bindtap="handlePublish" form-type="submit" >发布</button>
+</view>
+</form>
+<loading-cpn wx:if="{{loadingshow}}"></loading-cpn>
+<publish-login wx:if="{{loadingshow}}"></publish-login>

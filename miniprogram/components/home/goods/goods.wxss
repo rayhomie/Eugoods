@@ -1,0 +1,23 @@
+/* components/home/goods/goods.wxss */
+.goods{
+  background-color: rgba(176, 213, 223, 0.178);
+  /* background-color: #ffffff; */
+  border-radius: 20rpx;
+  /* border:2rpx solid red; */
+  display: flex;
+  flex-direction: column;
+  margin: 5rpx;
+  box-sizing: border-box;
+  padding: 0rpx;
+  color: rgba(128, 128, 128, 0.912);
+}
+
+.goods-name{
+
+}
+.goods-image{
+
+}
+.goods-price{
+
+}

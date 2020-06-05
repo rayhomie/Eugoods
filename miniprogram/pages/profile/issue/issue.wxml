@@ -1,0 +1,14 @@
+<!--miniprogram/pages/profile/issue/issue.wxml-->
+<view class="displayAll">
+<block wx:for="{{myGoods}}" wx:key="index">
+<goods-list class="list" catchtap="detailsPage" data-goodid="{{item._id}}">
+<image class="image" slot="goods-image" src="{{item.goods_image[0]}}" lazy-load="{{true}}" mode="aspectFill"></image>
+<view class="name" slot="goods-name">{{item.goods_name}}</view>
+<view class="price" slot="goods-price">￥{{item.goods_price}}</view>
+<view class="status" slot="goods-list-star" wx:if="{{item.goods_status}}">上架中</view>
+<view class="status" slot="goods-list-star" wx:if="{{!item.goods_status}}">被预订</view>
+<button size="mini" class="cancelBuy" slot="goods-list-star" catchtap="cancel" data-goodid="{{item._id}}">下架</button>
+</goods-list>
+</block>
+</view>
+<loading-cpn wx:if="{{loadingshow}}"></loading-cpn>

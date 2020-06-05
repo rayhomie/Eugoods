@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/loadinghome/loadinghome",
+    "pages/home/home",
+    "pages/profile/profile",
+    "pages/profile/customerService/customerService",
+    "pages/profile/issue/issue",
+    "pages/profile/sale/sale",
+    "pages/profile/bought/bought",
+    "pages/profile/wanna/wanna",
+    "pages/publish/publish",
+    "pages/home/detailsPage/detailsPage",
+    "pages/profile/issue/detailsPage/detailsPage",
+    "pages/home/detailsPage/buy/buy"
+  ],
+  "window": {
+    "backgroundColor": "#b0d5df",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#b0d5df",
+    "navigationBarTitleText": "西柚美物",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#f0f5e5",
+    "backgroundColor": "#b0d5df",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "./assets/img/tabbar/home1.png",
+        "selectedIconPath": "./assets/img/tabbar/home3.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布",
+        "iconPath": "./assets/img/tabbar/addto1.png",
+        "selectedIconPath": "./assets/img/tabbar/addto3.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "./assets/img/tabbar/nickname1.png",
+        "selectedIconPath": "./assets/img/tabbar/nickname3.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

@@ -1,0 +1,12 @@
+<!--components/loading/loading-cpn.wxml-->
+<!-- 第二个Loader -->
+<view class="loader">
+  <view class="rect-wapper">
+    <view class="rect-block">
+      <view class="rect-1 rect"></view>
+      <view class="rect-2 rect"></view>
+      <view class="rect-3 rect"></view>
+      <view class="rect-4 rect"></view>
+    </view>
+  </view>
+</view>

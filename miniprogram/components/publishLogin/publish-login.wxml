@@ -1,0 +1,9 @@
+<!--components/publishLogin/publish-login.wxml-->
+<view class="loader">
+  <view class="rect-wapper">
+    <view class="rect-block">
+    <view class="rect">请登录后再试</view>
+    </view>
+  </view>
+</view>
+

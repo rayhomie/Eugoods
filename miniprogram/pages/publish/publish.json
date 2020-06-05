@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "loading-cpn":"../../components/loading/loading-cpn",
+    "publish-login":"../../components/publishLogin/publish-login"
+  },
+  "navigationBarTitleText": "发布"
+}
