@@ -1,5 +1,17 @@
 # 西柚美物小程序技术开发方案
 
+## 运行图片
+
+![1](https://personal-financ.oss-cn-chengdu.aliyuncs.com/cdn/西柚美物/5.gif)
+
+![2](https://personal-financ.oss-cn-chengdu.aliyuncs.com/cdn/西柚美物/4.gif)
+
+![3](https://personal-financ.oss-cn-chengdu.aliyuncs.com/cdn/西柚美物/3.gif)
+
+![4](https://personal-financ.oss-cn-chengdu.aliyuncs.com/cdn/西柚美物/1.gif)
+
+![5](https://personal-financ.oss-cn-chengdu.aliyuncs.com/cdn/西柚美物/2.gif)
+
 ## ***\*引言\****
 
 编写目的
