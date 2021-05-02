@@ -255,12 +255,8 @@ Logo设计
  
  ## 运行图片
 
-![1](https://personal-financ.oss-cn-chengdu.aliyuncs.com/cdn/西柚美物/西柚美物/压缩1.gif =375x258)
-
-![2](https://personal-financ.oss-cn-chengdu.aliyuncs.com/cdn/西柚美物/西柚美物/2.gif)
-
-![3](https://personal-financ.oss-cn-chengdu.aliyuncs.com/cdn/西柚美物/西柚美物/3.gif)
-
-![4](https://personal-financ.oss-cn-chengdu.aliyuncs.com/cdn/西柚美物/西柚美物/4.gif)
-
-![5](https://personal-financ.oss-cn-chengdu.aliyuncs.com/cdn/西柚美物/西柚美物/压缩5.gif)
+![1](https://personal-financ.oss-cn-chengdu.aliyuncs.com/cdn/西柚美物/西柚美物/压缩1.gif?x-oss-process=image/resize,w_225,h_387)
+![2](https://personal-financ.oss-cn-chengdu.aliyuncs.com/cdn/西柚美物/西柚美物/2.gif?x-oss-process=image/resize,w_225,h_387)
+![3](https://personal-financ.oss-cn-chengdu.aliyuncs.com/cdn/西柚美物/西柚美物/3.gif?x-oss-process=image/resize,w_225,h_387)
+![4](https://personal-financ.oss-cn-chengdu.aliyuncs.com/cdn/西柚美物/西柚美物/4.gif?x-oss-process=image/resize,w_225,h_387)
+![5](https://personal-financ.oss-cn-chengdu.aliyuncs.com/cdn/西柚美物/西柚美物/压缩5.gif?x-oss-process=image/resize,w_225,h_387)
